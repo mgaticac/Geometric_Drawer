@@ -148,6 +148,15 @@ public class Calculo {
 
         return perimetroTexto;
     }
+    
+    public String getPerimetroTriangulo(){
+        double perimetro= raizAB+raizBC+raizAC;
+        Math.round(perimetro);
+        
+        String perimetroTexto=(String.valueOf(perimetro));
+        
+        return perimetroTexto;
+    }
 
     public boolean isError() {
         return error;
