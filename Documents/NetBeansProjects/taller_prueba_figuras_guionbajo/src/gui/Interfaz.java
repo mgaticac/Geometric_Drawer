@@ -243,6 +243,20 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permito.");
         }
 
+        if (calculo.isError() == true) {
+            lblResultado.setText(calculo.getPerimetroTriangulo());
+        } else {
+
+        }//Al momento de poner true saca el resultado de forma correcta, pero mostrara el msj de error de igual forma.
+        //Sin sobrescribir la condicion.
+        //Si se aplica false, el perimetro es erroneo.
+        //(-1,2),(1,2),(3,1)=4,472135956 U.
+        if (calculo.isError() == false) {//Se sobrescribe la condición para mostrar el  mensaje de error,(solo triangulos).
+            lblResultado.setText(calculo.getPerimetroCuadrado());
+        } else {
+            JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
+        }
+
         if (cantPuntos == 3) {
             //dos lados iguales
             if (calculo.getRaizAB() == calculo.getRaizBC()
@@ -258,11 +272,10 @@ public class Interfaz extends javax.swing.JFrame {
 
                 }
                 System.out.println("Triángulo Isósceles");
-            }else{
+            } else {
                 System.out.println("Triángulo Escaleno");
             }
 
-           
         }
 
 
