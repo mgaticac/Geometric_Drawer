@@ -1,4 +1,8 @@
 package gui;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JOptionPane;
 import model.Calculo;
 
 /**
@@ -8,18 +12,13 @@ import model.Calculo;
 public class Interfaz extends javax.swing.JFrame {
 
     int cantPuntos;
-    
 
     public Interfaz() {
         initComponents();
     }
-    
-    //codigo propio
-    
-    
-    
-    //codigo propio
 
+    //codigo propio
+    //codigo propio
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,6 +35,10 @@ public class Interfaz extends javax.swing.JFrame {
         btnIdentificar = new javax.swing.JButton();
         lblResultado = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        panelDibujar = new javax.swing.JPanel();
+        lblResultado1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        areaNota = new javax.swing.JTextArea();
         ventanaPrinc = new javax.swing.JPanel();
         cmbOpciones = new javax.swing.JComboBox<>();
         btnProceder = new javax.swing.JButton();
@@ -45,55 +48,94 @@ public class Interfaz extends javax.swing.JFrame {
 
         ventanaCalc.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ventanaCalc.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        ventanaCalc.getContentPane().add(txtPunto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 74, 110, 20));
-        ventanaCalc.getContentPane().add(txtPunto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 102, 111, -1));
+
+        txtPunto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPunto1ActionPerformed(evt);
+            }
+        });
+        ventanaCalc.getContentPane().add(txtPunto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 110, 20));
+        ventanaCalc.getContentPane().add(txtPunto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 111, -1));
 
         txtPunto4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPunto4ActionPerformed(evt);
             }
         });
-        ventanaCalc.getContentPane().add(txtPunto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 155, 111, -1));
-        ventanaCalc.getContentPane().add(txtPunto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 128, 111, -1));
+        ventanaCalc.getContentPane().add(txtPunto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 111, -1));
+        ventanaCalc.getContentPane().add(txtPunto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 111, -1));
 
         lblB1.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         lblB1.setForeground(new java.awt.Color(51, 0, 51));
         lblB1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblB1.setText("punto 1");
-        ventanaCalc.getContentPane().add(lblB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 71, 82, 25));
+        ventanaCalc.getContentPane().add(lblB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 110, 20));
 
         lblB2.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         lblB2.setForeground(new java.awt.Color(51, 0, 51));
         lblB2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblB2.setText("punto 2");
-        ventanaCalc.getContentPane().add(lblB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 104, 82, -1));
+        ventanaCalc.getContentPane().add(lblB2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, 20));
 
         lblB3.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         lblB3.setForeground(new java.awt.Color(51, 0, 51));
         lblB3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblB3.setText("punto 3");
-        ventanaCalc.getContentPane().add(lblB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 128, 71, 21));
+        ventanaCalc.getContentPane().add(lblB3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 110, 21));
 
         lblB4.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         lblB4.setForeground(new java.awt.Color(51, 0, 51));
         lblB4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblB4.setText("punto 4");
-        ventanaCalc.getContentPane().add(lblB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 155, 71, 26));
+        ventanaCalc.getContentPane().add(lblB4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 110, 20));
 
-        btnIdentificar.setText("ok");
+        btnIdentificar.setText("Identificar");
         btnIdentificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIdentificarActionPerformed(evt);
             }
         });
-        ventanaCalc.getContentPane().add(btnIdentificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 69, -1));
+        ventanaCalc.getContentPane().add(btnIdentificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 120, -1));
 
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setText("resultado");
-        ventanaCalc.getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 130, 30));
+        lblResultado.setText("-----------------------");
+        ventanaCalc.getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 150, 30));
 
         btnRegresar.setText("Regresar");
-        ventanaCalc.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, -1));
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        ventanaCalc.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, -1, -1));
+
+        panelDibujar.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
+        panelDibujar.setLayout(panelDibujarLayout);
+        panelDibujarLayout.setHorizontalGroup(
+            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 580, Short.MAX_VALUE)
+        );
+        panelDibujarLayout.setVerticalGroup(
+            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 510, Short.MAX_VALUE)
+        );
+
+        ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 580, 510));
+
+        lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado1.setText("Perimetro:");
+        ventanaCalc.getContentPane().add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 80, 30));
+
+        areaNota.setEditable(false);
+        areaNota.setBackground(new java.awt.Color(240, 240, 240));
+        areaNota.setColumns(20);
+        areaNota.setRows(5);
+        areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 20.\n\nEJ: \" 20,20 (Maximo) \" \n    \" 1,1(Minimo) \".");
+        jScrollPane1.setViewportView(areaNota);
+
+        ventanaCalc.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 230, 140));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,7 +170,7 @@ public class Interfaz extends javax.swing.JFrame {
         ventanaPrincLayout.setHorizontalGroup(
             ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaPrincLayout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaPrincLayout.createSequentialGroup()
                         .addComponent(bar1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,10 +206,7 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ventanaPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(ventanaPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,6 +215,72 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPunto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPunto4ActionPerformed
+
+    private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
+        // TODO add your handling code here:
+
+        Calculo calculo = new Calculo();
+
+        if (cantPuntos == 4) {
+            calculo.punto1Cuadrado(txtPunto1.getText());
+            calculo.punto2Cuadrado(txtPunto2.getText());
+            calculo.punto3Cuadrado(txtPunto3.getText());
+            calculo.punto4Cuadrado(txtPunto4.getText());
+
+        } else if (cantPuntos == 3) {
+            calculo.punto1Triangulo(txtPunto1.getText());
+            calculo.punto2Triangulo(txtPunto2.getText());
+            calculo.punto3Triangulo(txtPunto3.getText());
+        }
+        if (calculo.isError() == false) {
+            lblResultado.setText(calculo.getPerimetroCuadrado());
+
+        } else {
+            JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permito.");
+        }
+
+        if (cantPuntos == 3) {
+            //dos lados iguales
+            if (calculo.getRaizAB() == calculo.getRaizBC()
+                    || calculo.getRaizBC() == calculo.getRaizAC()
+                    || calculo.getRaizAB() == calculo.getRaizAC()) {
+
+                //todos iguales
+                if (calculo.getRaizAB() == calculo.getRaizBC()
+                        && calculo.getRaizBC() == calculo.getRaizAC()
+                        && calculo.getRaizAB() == calculo.getRaizAC()) {
+
+                    System.out.println("Triángulo Equilátero");
+
+                }
+                System.out.println("Triángulo Isósceles");
+            }else{
+                System.out.println("Triángulo Escaleno");
+            }
+
+           
+        }
+
+
+    }//GEN-LAST:event_btnIdentificarActionPerformed
+
+    private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
+
+        if (cantPuntos == 3) {
+            lblB4.setVisible(false);
+            txtPunto4.setVisible(false);
+        }
+        ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
+        System.out.println(ventanaPrinc.getHeight() * 2);
+        ventanaCalc.setVisible(true);
+        ventanaCalc.setFocusable(true);
+
+
+    }//GEN-LAST:event_btnProcederActionPerformed
 
     private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed
 
@@ -186,43 +291,22 @@ public class Interfaz extends javax.swing.JFrame {
         } else {
             cantPuntos = 1;
         }
-        
+
     }//GEN-LAST:event_cmbOpcionesActionPerformed
 
-    private void txtPunto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPunto4ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        ventanaPrinc.setFocusCycleRoot(true);
+        ventanaCalc.setVisible(false);
+        txtPunto1.setText("");
+        txtPunto2.setText("");
+        txtPunto3.setText("");
+        txtPunto4.setText("");
+        lblResultado.setText("-----------------------");
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
-        
-        
-        if(cantPuntos == 3){
-            lblB4.setVisible(false);
-            txtPunto4.setVisible(false);
-        }
-        ventanaCalc.setBounds(ventanaPrinc.getX(),ventanaPrinc.getY(),700,500);
-        System.out.println(ventanaPrinc.getHeight()*2);
-        ventanaCalc.setVisible(true);
-        ventanaCalc.setFocusable(true);
-        
-        
-        
-        
-    }//GEN-LAST:event_btnProcederActionPerformed
-
-    private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
+    private void txtPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto1ActionPerformed
         // TODO add your handling code here:
-        Calculo calculo = new Calculo();
-        calculo.punto1(txtPunto1.getText());
-        calculo.punto2(txtPunto2.getText());
-        calculo.punto3(txtPunto3.getText());
-        if(cantPuntos == 4){
-        calculo.punto4(txtPunto4.getText());
-            
-        }
-        
-        lblResultado.setText(calculo.getPerimetro());
-    }//GEN-LAST:event_btnIdentificarActionPerformed
+    }//GEN-LAST:event_txtPunto1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -230,19 +314,20 @@ public class Interfaz extends javax.swing.JFrame {
             public void run() {
                 new Interfaz().setVisible(true);
             }
-            
-        });
-        
-        
-        
-    }
 
+        });
+        //codigo a ejecutarse al comienzo
+
+        //termino de codigo
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea areaNota;
     private javax.swing.JProgressBar bar1;
     private javax.swing.JButton btnIdentificar;
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbOpciones;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lblB1;
@@ -250,6 +335,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel lblB3;
     private javax.swing.JLabel lblB4;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblResultado1;
+    private javax.swing.JPanel panelDibujar;
     private javax.swing.JTextField txtPunto1;
     private javax.swing.JTextField txtPunto2;
     private javax.swing.JTextField txtPunto3;
