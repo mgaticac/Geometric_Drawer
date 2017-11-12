@@ -2,6 +2,8 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -26,8 +28,8 @@ public class Interfaz extends javax.swing.JFrame {
         ventanaCalc = new javax.swing.JFrame();
         txtPunto1 = new javax.swing.JTextField();
         txtPunto2 = new javax.swing.JTextField();
-        txtPunto4 = new javax.swing.JTextField();
         txtPunto3 = new javax.swing.JTextField();
+        txtPunto4 = new javax.swing.JTextField();
         lblB1 = new javax.swing.JLabel();
         lblB2 = new javax.swing.JLabel();
         lblB3 = new javax.swing.JLabel();
@@ -37,7 +39,6 @@ public class Interfaz extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         panelDibujar = new javax.swing.JPanel();
         lblResultado1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
         areaNota = new javax.swing.JTextArea();
         ventanaPrinc = new javax.swing.JPanel();
         cmbOpciones = new javax.swing.JComboBox<>();
@@ -56,6 +57,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         ventanaCalc.getContentPane().add(txtPunto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 110, 20));
         ventanaCalc.getContentPane().add(txtPunto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 111, -1));
+        ventanaCalc.getContentPane().add(txtPunto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 111, -1));
 
         txtPunto4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +65,6 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
         ventanaCalc.getContentPane().add(txtPunto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 111, -1));
-        ventanaCalc.getContentPane().add(txtPunto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 111, -1));
 
         lblB1.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
         lblB1.setForeground(new java.awt.Color(51, 0, 51));
@@ -133,9 +134,7 @@ public class Interfaz extends javax.swing.JFrame {
         areaNota.setColumns(20);
         areaNota.setRows(5);
         areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 20.\n\nEJ: \" 20,20 (Maximo) \" \n    \" 1,1(Minimo) \".");
-        jScrollPane1.setViewportView(areaNota);
-
-        ventanaCalc.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 230, 140));
+        ventanaCalc.getContentPane().add(areaNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, 150));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -251,6 +250,7 @@ public class Interfaz extends javax.swing.JFrame {
         //Sin sobrescribir la condicion.
         //Si se aplica false, el perimetro es erroneo.
         //(-1,2),(1,2),(3,1)=4,472135956 U.
+
         if (calculo.isError() == false) {//Se sobrescribe la condición para mostrar el  mensaje de error,(solo triangulos).
             lblResultado.setText(calculo.getPerimetroCuadrado());
         } else {
@@ -278,6 +278,24 @@ public class Interfaz extends javax.swing.JFrame {
 
         }
 
+        if (cantPuntos == 4) {
+            
+            
+            if ((calculo.getRaizAB() == calculo.getRaizBC())
+                    && (calculo.getRaizBC() == calculo.getRaizCD())
+                    && (calculo.getRaizCD() == calculo.getRaizAD())
+                    && (calculo.getRaizAD() == calculo.getRaizAB())) {
+                System.out.println("cuadrado");
+                //cuadrado
+            } 
+//            else if ((calculo.getRaizAB() == calculo.getRaizCD())
+//                    && (calculo.getRaizAD() == calculo.getRaizBC())) {
+//                //rectangulo
+//                System.out.println("rectangulo");
+//            }
+
+        }
+
 
     }//GEN-LAST:event_btnIdentificarActionPerformed
 
@@ -286,13 +304,35 @@ public class Interfaz extends javax.swing.JFrame {
         if (cantPuntos == 3) {
             lblB4.setVisible(false);
             txtPunto4.setVisible(false);
+            ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
+            ventanaCalc.setVisible(true);
+            ventanaCalc.setFocusable(true);
+
+        } else if (cantPuntos == 4) {
+            ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
+            ventanaCalc.setVisible(true);
+            ventanaCalc.setFocusable(true);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
         }
-        ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
-        System.out.println(ventanaPrinc.getHeight() * 2);
-        ventanaCalc.setVisible(true);
-        ventanaCalc.setFocusable(true);
 
-
+//        ver como rellenar barra de carga
+//        int n = 0;
+//        bar1.setMinimum(0);
+//        bar1.setMaximum(100);
+//        while(true){
+//            try {
+//                Thread.sleep(ALLBITS);
+//            } catch (InterruptedException ex) {
+//                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+//                bar1.setValue(n+=10);
+//                if(bar1.getValue()>= 100){
+//                    break;
+//                }
+//            }
+//        
+//        }
     }//GEN-LAST:event_btnProcederActionPerformed
 
     private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed
@@ -315,6 +355,9 @@ public class Interfaz extends javax.swing.JFrame {
         txtPunto3.setText("");
         txtPunto4.setText("");
         lblResultado.setText("-----------------------");
+        cmbOpciones.setSelectedIndex(0);
+        lblB4.setVisible(true);
+        txtPunto4.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto1ActionPerformed
@@ -340,7 +383,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JComboBox<String> cmbOpciones;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lblB1;

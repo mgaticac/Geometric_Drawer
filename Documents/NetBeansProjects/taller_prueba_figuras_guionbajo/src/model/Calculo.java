@@ -1,13 +1,15 @@
 package model;
 
+
+
 public class Calculo {
 
     int AX, AY, BX, BY, CX, CY, DX, DY;
+    double AB, BC, CD, AD;
     boolean error = false;
 
     String[] Coordenadasp1, Coordenadasp2, Coordenadasp3, Coordenadasp4 = new String[3];
-    double raizAB, raizBC, raizCD, raizAD, raizAC;
-
+   double raizAB, raizBC, raizCD, raizAD, raizAC;
     //definicion punto1Cuadrado
     public void punto1Cuadrado(String punto1) {
         try {
@@ -21,6 +23,7 @@ public class Calculo {
             double ABY2 = Math.pow(restaABY, 2);
             double suma = ABX2 + ABY2;
             raizAB = Math.sqrt(Math.round(suma));
+            System.out.println("raiz AB: "+raizAB);
 
         } catch (Exception e) {
             error = true;
@@ -36,10 +39,11 @@ public class Calculo {
             //BC
             int restaBCX = (CX - BX);
             int restaBCY = (CY - BY);
-            double BCX2 = Math.pow(restaBCX, 2);
-            double BCY2 = Math.pow(restaBCY, 2);
-            double suma2 = BCX2 + BCY2;
+            double CBX2 = Math.pow(restaBCX, 2);
+            double CBY2 = Math.pow(restaBCY, 2);
+            double suma2 = CBX2 + CBY2;
             raizBC = Math.sqrt(Math.round(suma2));
+            System.out.println("raiz BC: "+raizBC);
         } catch (Exception e) {
             error = true;
         }
@@ -50,15 +54,15 @@ public class Calculo {
     public void punto3Cuadrado(String punto3) {
         try {
             Coordenadasp3 = punto3.split(",");
-            CX = Integer.parseInt(Coordenadasp3[0]);
-            CY = Integer.parseInt(Coordenadasp3[1]);
-            //CD
-            int restaCDX = (CX - DX);
-            int restaCDY = (CY - DY);
+            CX = Integer.parseInt(Coordenadasp1[0]);
+            CY = Integer.parseInt(Coordenadasp1[1]);
+            int restaCDX = (DX - CX);
+            int restaCDY = (DY - CY);
             double CDX2 = Math.pow(restaCDX, 2);
             double CDY2 = Math.pow(restaCDY, 2);
             double suma3 = CDX2 + CDY2;
-            raizCD = Math.sqrt(suma3);
+            raizCD = Math.sqrt(Math.round(suma3));
+            System.out.println("raiz CD: "+raizCD);
         } catch (Exception e) {
             error = true;
         }
@@ -69,16 +73,16 @@ public class Calculo {
     public void punto4Cuadrado(String punto4) {
         try {
             Coordenadasp4 = punto4.split(",");
-            DX = Integer.parseInt(Coordenadasp4[0]);
-            DY = Integer.parseInt(Coordenadasp4[1]);
-            //AD
+            DX = Integer.parseInt(Coordenadasp1[0]);
+            DY = Integer.parseInt(Coordenadasp1[1]);
+            //AB
             int restaADX = (AX - DX);
             int restaADY = (AY - DY);
-
             double ADX2 = Math.pow(restaADX, 2);
             double ADY2 = Math.pow(restaADY, 2);
             double suma4 = ADX2 + ADY2;
-            raizAD = Math.sqrt(suma4);
+            raizAD = Math.sqrt(Math.round(suma4));
+            System.out.println("raiz AD: "+raizAD);
         } catch (Exception e) {
             error = true;
         }
