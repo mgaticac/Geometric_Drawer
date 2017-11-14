@@ -3,14 +3,11 @@ package model;
 public class Calculo {
 
     boolean error = false;
-    
-    
-   double resultadoAB,resultadoBC, resultadoCD,resultadoAD,resultadoTAB,resultadoTBC, resultadoTAC;
-    
-    
-    
-    
 
+    double resultadoAB, resultadoBC, resultadoCD, resultadoAD, resultadoTAB, resultadoTBC, resultadoTAC;
+    double a, b;
+
+    
     //definicion punto1Cuadrado
     public void punto1Cuadrado(double ax1, double ay1, double bx1, double by1) {
         try {
@@ -66,7 +63,6 @@ public class Calculo {
             double raiz = Math.sqrt(suma);
             resultadoCD = Math.abs(raiz);
             System.out.println(resultadoCD);
-            
 
         } catch (Exception e) {
             error = true;
@@ -107,6 +103,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAB = Math.abs(raiz);
+            System.out.println("AB: "+resultadoTAB);
         } catch (Exception e) {
             error = true;
         }
@@ -124,6 +121,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTBC = Math.abs(raiz);
+            System.out.println("BC: "+resultadoTBC);
         } catch (Exception e) {
             error = true;
         }
@@ -141,6 +139,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAC = Math.abs(raiz);
+            System.out.println("AC : "+resultadoTAC);
         } catch (Exception e) {
             error = true;
         }
@@ -149,14 +148,17 @@ public class Calculo {
     public boolean isError() {
         return error;
     }
-    public String getPerimetroCuadrado(){
-        double perimetroCuadrado = resultadoAB + resultadoBC + resultadoCD +resultadoAD;
+
+    public String getPerimetroCuadrado() {
+        double perimetroCuadrado = resultadoAB + resultadoBC + resultadoCD + resultadoAD;
+        a = perimetroCuadrado;
         String perimetroC = String.valueOf(perimetroCuadrado);
         return perimetroC;
     }
-    
-    public String getPerimetroTriangulo(){
+
+    public String getPerimetroTriangulo() {
         double perimetroTriangulo = resultadoTAB + resultadoTBC + resultadoTAC;
+        b = perimetroTriangulo;
         String perimetroT = String.valueOf(perimetroTriangulo);
         return perimetroT;
     }
@@ -189,6 +191,12 @@ public class Calculo {
         return resultadoTAC;
     }
     
-    
+    public double getA() {
+        return a;
+    }
+
+    public double getB() {
+        return b;
+    }
     
 }

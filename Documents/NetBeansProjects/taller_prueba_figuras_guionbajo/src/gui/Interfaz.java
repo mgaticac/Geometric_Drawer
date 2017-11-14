@@ -273,9 +273,9 @@ public class Interfaz extends javax.swing.JFrame {
             coordenada3 = txtPunto3.getText().split(",");
             double cx = Double.valueOf(coordenada3[0]);
             double cy = Double.valueOf(coordenada3[1]);
-
-            calculo.punto2Triangulo(bx, by, cx, cy);
             calculo.punto1Triangulo(ax, ay, bx, by);
+            calculo.punto2Triangulo(bx, by, cx, cy);
+
             calculo.punto3Triangulo(cx, cy, ax, ay);
 
             if (calculo.isError() == false) {
@@ -286,34 +286,58 @@ public class Interfaz extends javax.swing.JFrame {
         }
 
         if (cantPuntos == 3) {
-            //dos lados iguales
-            if (calculo.getResultadoAB() == calculo.getResultadoBC()
-                    || calculo.getResultadoBC() == calculo.getResultadoTAC()
-                    || calculo.getResultadoAB() == calculo.getResultadoTAC()) {
-
-                //todos iguales
-                if (calculo.getResultadoAB() == calculo.getResultadoBC()
-                        && calculo.getResultadoBC() == calculo.getResultadoTAC()
-                        && calculo.getResultadoAB() == calculo.getResultadoTAC()) {
-
-                    System.out.println("Triángulo Equilátero");
-
-                }
-                System.out.println("Triángulo Isósceles");
+            //si todos son iguales
+            if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
+                    && calculo.getResultadoTBC() == calculo.getResultadoTAC()
+                    && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+                System.out.println("Triangulo Equilatero");
+            } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
+                    || calculo.getResultadoTBC() == calculo.getResultadoTAC()
+                    || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+                System.out.println("Triangulo Isoceles");
             } else {
-                System.out.println("Triángulo Escaleno");
+                System.out.println("triangulo escaleno");
             }
 
         }
         if (cantPuntos == 4) {
+            boolean trapecio = false;
 
-            //cuadrado
-        }else if ((calculo.getResultadoAB() == calculo.getResultadoCD())
-                    && (calculo.getResultadoAD() == calculo.getResultadoBC())) {
-                //rectangulo
-                System.out.println("rectangulo");
+            if ((calculo.getResultadoAB() == calculo.getResultadoCD())
+                    && (calculo.getResultadoCD() == calculo.getResultadoAD())
+                    && (calculo.getResultadoAD() == calculo.getResultadoAB())) {
+                if ((calculo.getA() - Math.floor(calculo.getA())) == 0) {
+                    System.out.println("Cuadrado");
+
+                } else {
+                    System.out.println("Rombo");
+                }
+
+            } else if (calculo.getResultadoAB() == calculo.getResultadoCD()
+                    && calculo.getResultadoAD() == calculo.getResultadoBC()
+                    && calculo.getResultadoAB() != calculo.getResultadoAD()
+                    && calculo.getResultadoCD() != calculo.getResultadoBC()
+                    && calculo.getResultadoAB() != calculo.getResultadoBC()
+                    && calculo.getResultadoCD() != calculo.getResultadoAD()) {
+                if ((calculo.getA() - Math.floor(calculo.getA()) == 0)) {
+                    System.out.println("Rectangulo");
+                } else {
+                    System.out.println("Romboide");
+                }
+
+            } else if (((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB())
+                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD()))
+                    && (  (((double)calculo.getResultadoAB() * 2)    == ((double)calculo.getResultadoCD() - calculo.getResultadoAB()))   - Math.floor(((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB()))) == 0)
+                    || (((calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())) - Math.floor(((calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD()))) == 0)) {
+                trapecio = true;
+
+            } else if (trapecio == true) {
+                System.out.println("Trapecio");
+            } else {
+                System.out.println("Trapezoide");
             }
-        
+
+        }
 
 
     }//GEN-LAST:event_btnIdentificarActionPerformed
