@@ -181,11 +181,11 @@
         <Component class="javax.swing.JLabel" name="lblResultado1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Perimetro:"/>
+            <Property name="text" type="java.lang.String" value="Perimetro :"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="10" width="80" height="30"/>
+              <AbsoluteConstraints x="300" y="10" width="200" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -197,7 +197,7 @@
             </Property>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="NOTA: Solo puede ingresar&#xa;numeros menores o iguales&#xa;a 20.&#xa;&#xa;EJ: &quot; 20,20 (Maximo) &quot; &#xa;    &quot; 1,1(Minimo) &quot;."/>
+            <Property name="text" type="java.lang.String" value="NOTA: Solo puede ingresar&#xa;numeros menores o iguales&#xa;a 20.&#xa;&#xa;EJ: &quot; 20,20 (Maximo) &quot; &#xa;    &quot; 0,0(Minimo) &quot;."/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

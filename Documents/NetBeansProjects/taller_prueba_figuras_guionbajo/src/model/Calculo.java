@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Point;
-
 public class Calculo {
 
     boolean error = false;
@@ -26,7 +24,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoAB = Math.abs(raiz);
-            
+            System.out.println(resultadoAB);
 
         } catch (Exception e) {
             error = true;
@@ -46,7 +44,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoBC = Math.abs(raiz);
-            
+            System.out.println(resultadoBC);
 
         } catch (Exception e) {
             error = true;
@@ -67,7 +65,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoCD = Math.abs(raiz);
-
+            System.out.println(resultadoCD);
             
 
         } catch (Exception e) {
@@ -89,7 +87,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoAD = Math.abs(raiz);
-            
+            System.out.println(resultadoAD);
 
         } catch (Exception e) {
             error = true;
@@ -109,7 +107,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAB = Math.abs(raiz);
-            System.out.println(resultadoTAB);
         } catch (Exception e) {
             error = true;
         }
@@ -127,7 +124,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTBC = Math.abs(raiz);
-            System.out.println(resultadoTBC);
         } catch (Exception e) {
             error = true;
         }
@@ -145,21 +141,54 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAC = Math.abs(raiz);
-            System.out.println(resultadoTAC);
         } catch (Exception e) {
             error = true;
         }
     }
 
-//    public String getPerimetroCuadrado() {
-//
-//    }
-//
-//    public String getPerimetroTriangulo() {
-//
-//    }
     public boolean isError() {
         return error;
     }
+    public String getPerimetroCuadrado(){
+        double perimetroCuadrado = resultadoAB + resultadoBC + resultadoCD +resultadoAD;
+        String perimetroC = String.valueOf(perimetroCuadrado);
+        return perimetroC;
+    }
+    
+    public String getPerimetroTriangulo(){
+        double perimetroTriangulo = resultadoTAB + resultadoTBC + resultadoTAC;
+        String perimetroT = String.valueOf(perimetroTriangulo);
+        return perimetroT;
+    }
 
+    public double getResultadoAB() {
+        return resultadoAB;
+    }
+
+    public double getResultadoBC() {
+        return resultadoBC;
+    }
+
+    public double getResultadoCD() {
+        return resultadoCD;
+    }
+
+    public double getResultadoAD() {
+        return resultadoAD;
+    }
+
+    public double getResultadoTAB() {
+        return resultadoTAB;
+    }
+
+    public double getResultadoTBC() {
+        return resultadoTBC;
+    }
+
+    public double getResultadoTAC() {
+        return resultadoTAC;
+    }
+    
+    
+    
 }

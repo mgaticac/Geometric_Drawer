@@ -1,7 +1,5 @@
 package gui;
 
-
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -124,14 +122,14 @@ public class Interfaz extends javax.swing.JFrame {
         ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 580, 510));
 
         lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado1.setText("Perimetro:");
-        ventanaCalc.getContentPane().add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 80, 30));
+        lblResultado1.setText("Perimetro :");
+        ventanaCalc.getContentPane().add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 200, 30));
 
         areaNota.setEditable(false);
         areaNota.setBackground(new java.awt.Color(240, 240, 240));
         areaNota.setColumns(20);
         areaNota.setRows(5);
-        areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 20.\n\nEJ: \" 20,20 (Maximo) \" \n    \" 1,1(Minimo) \".");
+        areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 20.\n\nEJ: \" 20,20 (Maximo) \" \n    \" 0,0(Minimo) \".");
         ventanaCalc.getContentPane().add(areaNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 240, 150));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -228,106 +226,94 @@ public class Interfaz extends javax.swing.JFrame {
             coordenada1 = txtPunto1.getText().split(",");
             double ax = Double.valueOf(coordenada1[0]);
             double ay = Double.valueOf(coordenada1[1]);
-            
-            String[] coordenada2 ;
-            coordenada2 = txtPunto2.getText().split(",");
-            double bx = Double.valueOf(coordenada2[0]);
-            double by = Double.valueOf(coordenada2[1]);
-            
-            String[] coordenada3;  
-            coordenada3 = txtPunto3.getText().split(",");
-            double cx = Double.valueOf(coordenada3[0]);
-            double cy = Double.valueOf(coordenada3[1]);
-            
-            String[] coordenada4;   
-            coordenada4 = txtPunto4.getText().split(",");
-            double dx = Double.valueOf(coordenada4[0]);
-            double dy = Double.valueOf(coordenada4[1]);
-            
-           
-            
 
-            calculo.punto1Cuadrado(ax,ay,bx,by);
-
-            calculo.punto2Cuadrado(bx,by,cx,cy);
-            
-            calculo.punto3Cuadrado(cx,cy,dx,dy);
-            
-            calculo.punto4Cuadrado(dx,dy,ax,ay);
-
-        } else if (cantPuntos == 3) {
-            
-            String[] coordenada1;
-            coordenada1 = txtPunto1.getText().split(",");
-            double ax = Double.valueOf(coordenada1[0]);
-            double ay = Double.valueOf(coordenada1[1]);
-            
             String[] coordenada2;
             coordenada2 = txtPunto2.getText().split(",");
             double bx = Double.valueOf(coordenada2[0]);
             double by = Double.valueOf(coordenada2[1]);
-            
-            String[] coordenada3;   
+
+            String[] coordenada3;
             coordenada3 = txtPunto3.getText().split(",");
             double cx = Double.valueOf(coordenada3[0]);
             double cy = Double.valueOf(coordenada3[1]);
-            
-            calculo.punto2Triangulo(bx,by,cx,cy);
-            calculo.punto1Triangulo(ax,ay,bx,by);
-            calculo.punto3Triangulo(cx,cy,ax,ay);
+
+            String[] coordenada4;
+            coordenada4 = txtPunto4.getText().split(",");
+            double dx = Double.valueOf(coordenada4[0]);
+            double dy = Double.valueOf(coordenada4[1]);
+
+            calculo.punto1Cuadrado(ax, ay, bx, by);
+
+            calculo.punto2Cuadrado(bx, by, cx, cy);
+
+            calculo.punto3Cuadrado(cx, cy, dx, dy);
+
+            calculo.punto4Cuadrado(dx, dy, ax, ay);
+
+            if (calculo.isError() == false) {
+                lblResultado.setText(calculo.getPerimetroCuadrado());
+
+            } else {
+                JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
+            }
+
+        } else if (cantPuntos == 3) {
+
+            String[] coordenada1;
+            coordenada1 = txtPunto1.getText().split(",");
+            double ax = Double.valueOf(coordenada1[0]);
+            double ay = Double.valueOf(coordenada1[1]);
+
+            String[] coordenada2;
+            coordenada2 = txtPunto2.getText().split(",");
+            double bx = Double.valueOf(coordenada2[0]);
+            double by = Double.valueOf(coordenada2[1]);
+
+            String[] coordenada3;
+            coordenada3 = txtPunto3.getText().split(",");
+            double cx = Double.valueOf(coordenada3[0]);
+            double cy = Double.valueOf(coordenada3[1]);
+
+            calculo.punto2Triangulo(bx, by, cx, cy);
+            calculo.punto1Triangulo(ax, ay, bx, by);
+            calculo.punto3Triangulo(cx, cy, ax, ay);
+
+            if (calculo.isError() == false) {
+                lblResultado.setText(calculo.getPerimetroTriangulo());
+            } else {
+                JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
+            }
         }
-//        if (calculo.isError() == false) {
-//            lblResultado.setText(calculo.getPerimetroCuadrado());
-//
-//        } else {
-//            JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permito.");
-//        }
-//
-//        if (calculo.isError() == true) {
-//            lblResultado.setText(calculo.getPerimetroTriangulo());
-//        } else {
-//
-//        }//Al momento de poner true saca el resultado de forma correcta, pero mostrara el msj de error de igual forma.
-//        //Sin sobrescribir la condicion.
-//        //Si se aplica false, el perimetro es erroneo.
-//        //(-1,2),(1,2),(3,1)=4,472135956 U.
-//
-//        if (calculo.isError() == false) {//Se sobrescribe la condición para mostrar el  mensaje de error,(solo triangulos).
-//            lblResultado.setText(calculo.getPerimetroCuadrado());
-//        } else {
-//            JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
-//        }
 
-//        if (cantPuntos == 3) {
-//            //dos lados iguales
-//            if (calculo.getRaizAB() == calculo.getRaizBC()
-//                    || calculo.getRaizBC() == calculo.getRaizAC()
-//                    || calculo.getRaizAB() == calculo.getRaizAC()) {
-//
-//                //todos iguales
-//                if (calculo.getRaizAB() == calculo.getRaizBC()
-//                        && calculo.getRaizBC() == calculo.getRaizAC()
-//                        && calculo.getRaizAB() == calculo.getRaizAC()) {
-//
-//                    System.out.println("Triángulo Equilátero");
-//
-//                }
-//                System.out.println("Triángulo Isósceles");
-//            } else {
-//                System.out.println("Triángulo Escaleno");
-//            }
-//
-//        }
+        if (cantPuntos == 3) {
+            //dos lados iguales
+            if (calculo.getResultadoAB() == calculo.getResultadoBC()
+                    || calculo.getResultadoBC() == calculo.getResultadoTAC()
+                    || calculo.getResultadoAB() == calculo.getResultadoTAC()) {
 
+                //todos iguales
+                if (calculo.getResultadoAB() == calculo.getResultadoBC()
+                        && calculo.getResultadoBC() == calculo.getResultadoTAC()
+                        && calculo.getResultadoAB() == calculo.getResultadoTAC()) {
+
+                    System.out.println("Triángulo Equilátero");
+
+                }
+                System.out.println("Triángulo Isósceles");
+            } else {
+                System.out.println("Triángulo Escaleno");
+            }
+
+        }
         if (cantPuntos == 4) {
 
             //cuadrado
-//            else if ((calculo.getRaizAB() == calculo.getRaizCD())
-//                    && (calculo.getRaizAD() == calculo.getRaizBC())) {
-//                //rectangulo
-//                System.out.println("rectangulo");
-//            }
-        }
+        }else if ((calculo.getResultadoAB() == calculo.getResultadoCD())
+                    && (calculo.getResultadoAD() == calculo.getResultadoBC())) {
+                //rectangulo
+                System.out.println("rectangulo");
+            }
+        
 
 
     }//GEN-LAST:event_btnIdentificarActionPerformed
@@ -340,12 +326,13 @@ public class Interfaz extends javax.swing.JFrame {
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
+            lblResultado1.setText("Perimetro Triangulo: ");
 
         } else if (cantPuntos == 4) {
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
-
+            lblResultado1.setText("Perimetro Cuadrado: ");
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
         }
