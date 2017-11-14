@@ -1,29 +1,32 @@
 package model;
 
-
+import java.awt.Point;
 
 public class Calculo {
 
-    int AX, AY, BX, BY, CX, CY, DX, DY;
-    double AB, BC, CD, AD;
     boolean error = false;
+    
+    
+   double resultadoAB,resultadoBC, resultadoCD,resultadoAD,resultadoTAB,resultadoTBC, resultadoTAC;
+    
+    
+    
+    
 
-    String[] Coordenadasp1, Coordenadasp2, Coordenadasp3, Coordenadasp4 = new String[3];
-   double raizAB, raizBC, raizCD, raizAD, raizAC;
     //definicion punto1Cuadrado
-    public void punto1Cuadrado(String punto1) {
+    public void punto1Cuadrado(double ax1, double ay1, double bx1, double by1) {
         try {
-            Coordenadasp1 = punto1.split(",");
-            AX = Integer.parseInt(Coordenadasp1[0]);
-            AY = Integer.parseInt(Coordenadasp1[1]);
-            //AB
-            int restaABX = (BX - AX);
-            int restaABY = (BY - AY);
-            double ABX2 = Math.pow(restaABX, 2);
-            double ABY2 = Math.pow(restaABY, 2);
-            double suma = ABX2 + ABY2;
-            raizAB = Math.sqrt(Math.round(suma));
-            System.out.println("raiz AB: "+raizAB);
+            double resta1 = ((double) bx1 - (double) ax1);
+            double resta2 = ((double) by1 - (double) ay1);
+
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoAB = Math.abs(raiz);
+            
 
         } catch (Exception e) {
             error = true;
@@ -31,19 +34,20 @@ public class Calculo {
     }
 
     //definicion punto2Cuadrado
-    public void punto2Cuadrado(String punto2) {
+    public void punto2Cuadrado(double bx1, double by1, double cx1, double cy1) {
         try {
-            Coordenadasp2 = punto2.split(",");
-            BX = Integer.parseInt(Coordenadasp2[0]);
-            BY = Integer.parseInt(Coordenadasp2[1]);
-            //BC
-            int restaBCX = (CX - BX);
-            int restaBCY = (CY - BY);
-            double CBX2 = Math.pow(restaBCX, 2);
-            double CBY2 = Math.pow(restaBCY, 2);
-            double suma2 = CBX2 + CBY2;
-            raizBC = Math.sqrt(Math.round(suma2));
-            System.out.println("raiz BC: "+raizBC);
+            double resta1 = ((double) cx1 - (double) bx1);
+            double resta2 = ((double) cy1 - (double) by1);
+
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoBC = Math.abs(raiz);
+            
+
         } catch (Exception e) {
             error = true;
         }
@@ -51,18 +55,21 @@ public class Calculo {
     }
 
     //definicion punto3Cuadrado
-    public void punto3Cuadrado(String punto3) {
+    public void punto3Cuadrado(double cx1, double cy1, double dx1, double dy1) {
         try {
-            Coordenadasp3 = punto3.split(",");
-            CX = Integer.parseInt(Coordenadasp1[0]);
-            CY = Integer.parseInt(Coordenadasp1[1]);
-            int restaCDX = (DX - CX);
-            int restaCDY = (DY - CY);
-            double CDX2 = Math.pow(restaCDX, 2);
-            double CDY2 = Math.pow(restaCDY, 2);
-            double suma3 = CDX2 + CDY2;
-            raizCD = Math.sqrt(Math.round(suma3));
-            System.out.println("raiz CD: "+raizCD);
+            double resta1 = ((double) dx1 - (double) cx1);
+            double resta2 = ((double) dy1 - (double) cy1);
+
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoCD = Math.abs(raiz);
+
+            
+
         } catch (Exception e) {
             error = true;
         }
@@ -70,120 +77,89 @@ public class Calculo {
     }
 
     //definicion punto4Cuadrado
-    public void punto4Cuadrado(String punto4) {
+    public void punto4Cuadrado(double dx1, double dy1, double ax1, double ay1) {
         try {
-            Coordenadasp4 = punto4.split(",");
-            DX = Integer.parseInt(Coordenadasp1[0]);
-            DY = Integer.parseInt(Coordenadasp1[1]);
-            //AB
-            int restaADX = (AX - DX);
-            int restaADY = (AY - DY);
-            double ADX2 = Math.pow(restaADX, 2);
-            double ADY2 = Math.pow(restaADY, 2);
-            double suma4 = ADX2 + ADY2;
-            raizAD = Math.sqrt(Math.round(suma4));
-            System.out.println("raiz AD: "+raizAD);
+            double resta1 = ((double) ax1 - (double) dx1);
+            double resta2 = ((double) ay1 - (double) dy1);
+
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoAD = Math.abs(raiz);
+            
+
         } catch (Exception e) {
             error = true;
         }
 
     }
 
-    
-    public void punto1Triangulo(String punto1) {
+    public void punto1Triangulo(double ax1, double ay1, double bx1, double by1) {
         try {
-            Coordenadasp1 = punto1.split(",");
-            AX = Integer.parseInt(Coordenadasp1[0]);
-            AY = Integer.parseInt(Coordenadasp1[1]);
-            //AB
-            int restaABX = (BX - AX);
-            int restaABY = (BY - AY);
-            double ABX2 = Math.pow(restaABX, 2);
-            double ABY2 = Math.pow(restaABY, 2);
-            double suma = ABX2 + ABY2;
-            raizAB = Math.sqrt(Math.round(suma));
+            double resta1 = ((double) bx1 - (double) ax1);
+            double resta2 = ((double) by1 - (double) ay1);
 
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoTAB = Math.abs(raiz);
+            System.out.println(resultadoTAB);
         } catch (Exception e) {
             error = true;
         }
     }
 
-    public void punto2Triangulo(String punto2) {
+    public void punto2Triangulo(double bx1, double by1, double cx1, double cy1) {
         try {
-            Coordenadasp2 = punto2.split(",");
-            BX = Integer.parseInt(Coordenadasp2[0]);
-            BY = Integer.parseInt(Coordenadasp2[1]);
-            //BC
-            int restaBCX = (CX - BX);
-            int restaBCY = (CY - BY);
-            double BCX2 = Math.pow(restaBCX, 2);
-            double BCY2 = Math.pow(restaBCY, 2);
-            double suma2 = BCX2 + BCY2;
-            raizBC = Math.sqrt(Math.round(suma2));
+            double resta1 = ((double) cx1 - (double) bx1);
+            double resta2 = ((double) cy1 - (double) by1);
 
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoTBC = Math.abs(raiz);
+            System.out.println(resultadoTBC);
         } catch (Exception e) {
             error = true;
         }
     }
 
-    public void punto3Triangulo(String punto3) {
+    public void punto3Triangulo(double cx1, double cy1, double ax1, double ay1) {
         try {
-            Coordenadasp3 = punto3.split(",");
-            CX = Integer.parseInt(Coordenadasp3[0]);
-            CY = Integer.parseInt(Coordenadasp3[1]);
-            //AC
-            int restaCDX = (CX - DX);
-            int restaCDY = (CY - DY);
-            double CDX2 = Math.pow(restaCDX, 2);
-            double CDY2 = Math.pow(restaCDY, 2);
-            double suma3 = CDX2 + CDY2;
-            raizAC = Math.sqrt(suma3);
+            double resta1 = ((double) ax1 - (double) cx1);
+            double resta2 = ((double) ay1 - (double) cy1);
 
+            double elevado1 = Math.pow(resta1, 2);
+            double elevado2 = Math.pow(resta2, 2);
+
+            double suma = elevado1 + elevado2;
+
+            double raiz = Math.sqrt(suma);
+            resultadoTAC = Math.abs(raiz);
+            System.out.println(resultadoTAC);
         } catch (Exception e) {
             error = true;
         }
     }
 
-    public String getPerimetroCuadrado() {
-        double perimetro = raizAB + raizBC + raizCD + raizAD;
-        Math.round(perimetro);
-
-        String perimetroTexto = String.valueOf(perimetro);
-
-        return perimetroTexto;
-    }
-    
-    public String getPerimetroTriangulo(){
-        double perimetro= raizAB+raizBC+raizAC;
-        Math.round(perimetro);
-        
-        String perimetroTexto=(String.valueOf(perimetro));
-        
-        return perimetroTexto;
-    }
-
+//    public String getPerimetroCuadrado() {
+//
+//    }
+//
+//    public String getPerimetroTriangulo() {
+//
+//    }
     public boolean isError() {
         return error;
     }
 
-    public double getRaizAB() {
-        return raizAB;
-    }
-
-    public double getRaizBC() {
-        return raizBC;
-    }
-
-    public double getRaizCD() {
-        return raizCD;
-    }
-
-    public double getRaizAD() {
-        return raizAD;
-    }
-
-    public double getRaizAC() {
-        return raizAC;
-    }
-    
 }
