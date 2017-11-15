@@ -38,18 +38,18 @@ public class Interfaz extends javax.swing.JFrame {
         btnEliminarPuntos = new javax.swing.JButton();
         areaNota = new javax.swing.JTextArea();
         btnRegresar = new javax.swing.JButton();
-        panelDibujar = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
+        panelDibujar = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         ventanaPrinc = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnProceder = new javax.swing.JButton();
-        cmbOopciones = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        cmbOpciones = new javax.swing.JComboBox<>();
+        btnSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -146,24 +146,6 @@ public class Interfaz extends javax.swing.JFrame {
         });
         ventanaCalc.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, -1, -1));
 
-        panelDibujar.setBackground(new java.awt.Color(204, 204, 255));
-        panelDibujar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelDibujar.setMaximumSize(new java.awt.Dimension(30000, 30000));
-        panelDibujar.setPreferredSize(new java.awt.Dimension(600, 600));
-
-        javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
-        panelDibujar.setLayout(panelDibujarLayout);
-        panelDibujarLayout.setHorizontalGroup(
-            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
-        );
-        panelDibujarLayout.setVerticalGroup(
-            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
-        );
-
-        ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 610, 520));
-
         jCheckBox1.setBackground(new java.awt.Color(51, 0, 255));
         jCheckBox1.setText("jCheckBox1");
         jCheckBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
@@ -184,6 +166,24 @@ public class Interfaz extends javax.swing.JFrame {
         jCheckBox4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
         ventanaCalc.getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 20, -1));
 
+        panelDibujar.setBackground(new java.awt.Color(204, 204, 255));
+        panelDibujar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panelDibujar.setMaximumSize(new java.awt.Dimension(30000, 30000));
+        panelDibujar.setPreferredSize(new java.awt.Dimension(600, 600));
+
+        javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
+        panelDibujar.setLayout(panelDibujarLayout);
+        panelDibujarLayout.setHorizontalGroup(
+            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 608, Short.MAX_VALUE)
+        );
+        panelDibujarLayout.setVerticalGroup(
+            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 518, Short.MAX_VALUE)
+        );
+
+        ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 610, 520));
+
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
@@ -199,16 +199,26 @@ public class Interfaz extends javax.swing.JFrame {
         btnProceder.setBackground(new java.awt.Color(153, 255, 204));
         btnProceder.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProceder.setText("Proceder");
+        btnProceder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcederActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnProceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, -1));
 
-        cmbOopciones.setBackground(new java.awt.Color(153, 255, 204));
-        cmbOopciones.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cmbOopciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione.", "3 Puntos", "4 Puntos" }));
-        jPanel1.add(cmbOopciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 240, -1));
+        cmbOpciones.setBackground(new java.awt.Color(153, 255, 204));
+        cmbOpciones.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmbOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione.", "3 Puntos", "4 Puntos" }));
+        cmbOpciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbOpcionesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 240, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setText("Salir");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnSalir.setText("Salir");
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 51));
@@ -277,7 +287,7 @@ public class Interfaz extends javax.swing.JFrame {
             double dy = Double.valueOf(coordenada4[1]);
 
             if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
-                && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
+                    && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
                 calculo.punto1Cuadrado(ax, ay, bx, by);
                 calculo.punto2Cuadrado(bx, by, cx, cy);
                 calculo.punto3Cuadrado(cx, cy, dx, dy);
@@ -310,11 +320,20 @@ public class Interfaz extends javax.swing.JFrame {
             coordenada3 = txtPunto3.getText().split(",");
             double cx = Double.valueOf(coordenada3[0]);
             double cy = Double.valueOf(coordenada3[1]);
-            calculo.punto1Triangulo(ax, ay, bx, by);
+            
+            
+            if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20
+                    && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20) {
+                calculo.punto1Triangulo(ax, ay, bx, by);
             calculo.punto2Triangulo(bx, by, cx, cy);
 
             calculo.punto3Triangulo(cx, cy, ax, ay);
 
+            } else {
+                JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
+
+            }
+            
             if (calculo.isError() == false) {
                 lblResultado.setText(calculo.getPerimetroTriangulo());
             } else {
@@ -325,12 +344,12 @@ public class Interfaz extends javax.swing.JFrame {
         if (cantPuntos == 3) {
             //si todos son iguales
             if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
-                && calculo.getResultadoTBC() == calculo.getResultadoTAC()
-                && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+                    && calculo.getResultadoTBC() == calculo.getResultadoTAC()
+                    && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
                 System.out.println("Triangulo Equilatero");
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
-                || calculo.getResultadoTBC() == calculo.getResultadoTAC()
-                || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+                    || calculo.getResultadoTBC() == calculo.getResultadoTAC()
+                    || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
                 System.out.println("Triangulo Isoceles");
             } else {
                 System.out.println("triangulo escaleno");
@@ -346,8 +365,8 @@ public class Interfaz extends javax.swing.JFrame {
             boolean trapezoide = false;
 
             if ((calculo.getResultadoAB() == calculo.getResultadoCD())
-                && (calculo.getResultadoCD() == calculo.getResultadoAD())
-                && (calculo.getResultadoAD() == calculo.getResultadoAB())) {
+                    && (calculo.getResultadoCD() == calculo.getResultadoAD())
+                    && (calculo.getResultadoAD() == calculo.getResultadoAB())) {
                 if ((calculo.getA() - Math.floor(calculo.getA())) == (double) 0.0) {
                     cuadrado = true;
                 } else {
@@ -355,18 +374,18 @@ public class Interfaz extends javax.swing.JFrame {
                 }
 
             } else if (calculo.getResultadoAB() == calculo.getResultadoCD()
-                && calculo.getResultadoAD() == calculo.getResultadoBC()
-                && calculo.getResultadoAB() != calculo.getResultadoAD()
-                && calculo.getResultadoCD() != calculo.getResultadoBC()
-                && calculo.getResultadoAB() != calculo.getResultadoBC()
-                && calculo.getResultadoCD() != calculo.getResultadoAD()) {
+                    && calculo.getResultadoAD() == calculo.getResultadoBC()
+                    && calculo.getResultadoAB() != calculo.getResultadoAD()
+                    && calculo.getResultadoCD() != calculo.getResultadoBC()
+                    && calculo.getResultadoAB() != calculo.getResultadoBC()
+                    && calculo.getResultadoCD() != calculo.getResultadoAD()) {
                 if ((calculo.getA() - Math.floor(calculo.getA()) == 0)) {
                     rectangulo = true;
                 } else {
                     romboide = true;
                 }
             } else if ((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB())
-                || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())) {
+                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())) {
                 trapecio = true;
             }
             if (trapecio == false && cuadrado == false && rectangulo == false && rombo == false && romboide == false) {
@@ -402,6 +421,39 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPunto1ActionPerformed
 
+    private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
+
+        if (cantPuntos == 3) {
+            lblB4.setVisible(false);
+            txtPunto4.setVisible(false);
+            ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
+            ventanaCalc.setVisible(true);
+            ventanaCalc.setFocusable(true);
+            lblResultado1.setText("Perimetro Triangulo: ");
+
+        } else if (cantPuntos == 4) {
+            ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
+            ventanaCalc.setVisible(true);
+            ventanaCalc.setFocusable(true);
+            lblResultado1.setText("Perimetro Cuadrado: ");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
+        }
+
+    }//GEN-LAST:event_btnProcederActionPerformed
+
+    private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed
+        
+        if (1 == (cmbOpciones.getSelectedIndex())) {
+            cantPuntos = 3;
+        } else if (2 == cmbOpciones.getSelectedIndex()) {
+            cantPuntos = 4;
+        } else {
+            cantPuntos = 1;
+        }
+        
+    }//GEN-LAST:event_cmbOpcionesActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -420,8 +472,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnIdentificar;
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JComboBox<String> cmbOopciones;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JComboBox<String> cmbOpciones;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
