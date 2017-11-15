@@ -11,13 +11,13 @@ public class Vectormain {
         //CREACIÓN DE VENTANA BASICA
         Vector vec= new Vector();
         
-        JFrame vector = new JFrame("Dibujo");
+        JPanel vector = new JPanel();
         vector.setVisible(true);
         vector.setSize(500,500);
-        vector.setLocationRelativeTo(null);
+        
         vector.setBackground(Color.black);
         vector.add(vec);
-        vector.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         
         
     }

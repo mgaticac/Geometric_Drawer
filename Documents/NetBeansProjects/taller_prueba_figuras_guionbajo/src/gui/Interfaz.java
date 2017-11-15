@@ -1,5 +1,7 @@
 package gui;
 
+import grafico.Vector;
+import java.awt.Graphics;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -106,19 +108,21 @@ public class Interfaz extends javax.swing.JFrame {
         ventanaCalc.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, -1, -1));
 
         panelDibujar.setBackground(new java.awt.Color(255, 255, 255));
+        panelDibujar.setMaximumSize(new java.awt.Dimension(30000, 30000));
+        panelDibujar.setPreferredSize(new java.awt.Dimension(600, 600));
 
         javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
         panelDibujar.setLayout(panelDibujarLayout);
         panelDibujarLayout.setHorizontalGroup(
             panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 610, Short.MAX_VALUE)
         );
         panelDibujarLayout.setVerticalGroup(
             panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
 
-        ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 580, 510));
+        ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 610, 520));
 
         lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado1.setText("Perimetro :");
@@ -208,8 +212,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPunto4ActionPerformed
 
     private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
-        // TODO add your handling code here:
-
+        Graphics p = panelDibujar.getGraphics();
+        Vector v = new Vector();
+        v.Cuadrado(p);
+        
         Calculo calculo = new Calculo();
 
         if (cantPuntos == 4) {
