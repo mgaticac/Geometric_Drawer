@@ -234,13 +234,16 @@ public class Interfaz extends javax.swing.JFrame {
             double dx = Double.valueOf(coordenada4[0]);
             double dy = Double.valueOf(coordenada4[1]);
 
-            calculo.punto1Cuadrado(ax, ay, bx, by);
+            if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
+                    && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
+                calculo.punto1Cuadrado(ax, ay, bx, by);
+                calculo.punto2Cuadrado(bx, by, cx, cy);
+                calculo.punto3Cuadrado(cx, cy, dx, dy);
+                calculo.punto4Cuadrado(dx, dy, ax, ay);
+            } else {
+                JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
 
-            calculo.punto2Cuadrado(bx, by, cx, cy);
-
-            calculo.punto3Cuadrado(cx, cy, dx, dy);
-
-            calculo.punto4Cuadrado(dx, dy, ax, ay);
+            }
 
             if (calculo.isError() == false) {
                 lblResultado.setText(calculo.getPerimetroCuadrado());
@@ -303,7 +306,7 @@ public class Interfaz extends javax.swing.JFrame {
             if ((calculo.getResultadoAB() == calculo.getResultadoCD())
                     && (calculo.getResultadoCD() == calculo.getResultadoAD())
                     && (calculo.getResultadoAD() == calculo.getResultadoAB())) {
-                if ((calculo.getA() - Math.floor(calculo.getA())) == (double)0.0) {
+                if ((calculo.getA() - Math.floor(calculo.getA())) == (double) 0.0) {
                     cuadrado = true;
                 } else {
                     rombo = true;
@@ -321,8 +324,7 @@ public class Interfaz extends javax.swing.JFrame {
                     romboide = true;
                 }
             } else if ((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB())
-                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())
-                    ) {
+                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())) {
                 trapecio = true;
             }
             if (trapecio == false && cuadrado == false && rectangulo == false && rombo == false && romboide == false) {
