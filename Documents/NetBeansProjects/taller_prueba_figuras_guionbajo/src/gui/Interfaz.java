@@ -41,7 +41,6 @@ public class Interfaz extends javax.swing.JFrame {
         btnProceder = new javax.swing.JButton();
         lbl1 = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
-        bar1 = new javax.swing.JProgressBar();
 
         ventanaCalc.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         ventanaCalc.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -158,18 +157,13 @@ public class Interfaz extends javax.swing.JFrame {
         lbl2.setForeground(new java.awt.Color(0, 102, 102));
         lbl2.setText("       ingrese la cantidad de puntos");
 
-        bar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         javax.swing.GroupLayout ventanaPrincLayout = new javax.swing.GroupLayout(ventanaPrinc);
         ventanaPrinc.setLayout(ventanaPrincLayout);
         ventanaPrincLayout.setHorizontalGroup(
             ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventanaPrincLayout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addContainerGap(114, Short.MAX_VALUE)
                 .addGroup(ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaPrincLayout.createSequentialGroup()
-                        .addComponent(bar1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventanaPrincLayout.createSequentialGroup()
                         .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90))
@@ -192,9 +186,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(cmbOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnProceder)
-                .addGap(56, 56, 56)
-                .addComponent(bar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(104, 104, 104))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,15 +294,19 @@ public class Interfaz extends javax.swing.JFrame {
         }
         if (cantPuntos == 4) {
             boolean trapecio = false;
+            boolean cuadrado = false;
+            boolean rombo = false;
+            boolean rectangulo = false;
+            boolean romboide = false;
+            boolean trapezoide = false;
 
             if ((calculo.getResultadoAB() == calculo.getResultadoCD())
                     && (calculo.getResultadoCD() == calculo.getResultadoAD())
                     && (calculo.getResultadoAD() == calculo.getResultadoAB())) {
-                if ((calculo.getA() - Math.floor(calculo.getA())) == 0) {
-                    System.out.println("Cuadrado");
-
+                if ((calculo.getA() - Math.floor(calculo.getA())) == (double)0.0) {
+                    cuadrado = true;
                 } else {
-                    System.out.println("Rombo");
+                    rombo = true;
                 }
 
             } else if (calculo.getResultadoAB() == calculo.getResultadoCD()
@@ -320,21 +316,35 @@ public class Interfaz extends javax.swing.JFrame {
                     && calculo.getResultadoAB() != calculo.getResultadoBC()
                     && calculo.getResultadoCD() != calculo.getResultadoAD()) {
                 if ((calculo.getA() - Math.floor(calculo.getA()) == 0)) {
-                    System.out.println("Rectangulo");
+                    rectangulo = true;
                 } else {
-                    System.out.println("Romboide");
+                    romboide = true;
                 }
-
-            } else if (((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB())
-                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD()))
-                    && (  (((double)calculo.getResultadoAB() * 2)    == ((double)calculo.getResultadoCD() - calculo.getResultadoAB()))   - Math.floor(((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB()))) == 0)
-                    || (((calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())) - Math.floor(((calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD()))) == 0)) {
+            } else if ((calculo.getResultadoAB() * 2) == (calculo.getResultadoCD() - calculo.getResultadoAB())
+                    || (calculo.getResultadoAD() * 2) == (calculo.getResultadoBC() - calculo.getResultadoAD())
+                    ) {
                 trapecio = true;
+            }
+            if (trapecio == false && cuadrado == false && rectangulo == false && rombo == false && romboide == false) {
+                trapezoide = true;
+            }
 
-            } else if (trapecio == true) {
+            if (trapecio == true) {
                 System.out.println("Trapecio");
+            } else if (cuadrado == true) {
+                System.out.println("cuadrado");
+            } else if (rectangulo == true) {
+                System.out.println("rectangulo");
+            } else if (romboide == true) {
+                System.out.println("romboide");
+            } else if (trapecio == true) {
+
+            } else if (trapezoide == true) {
+                System.out.println("trapezoide");
+            } else if (rombo == true) {
+                System.out.println("Rombo");
             } else {
-                System.out.println("Trapezoide");
+                System.err.println("[Error]NO SE DETECTO NINGUNA FIGURA, LO SENTIMOS");
             }
 
         }
@@ -422,7 +432,6 @@ public class Interfaz extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaNota;
-    private javax.swing.JProgressBar bar1;
     private javax.swing.JButton btnIdentificar;
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;

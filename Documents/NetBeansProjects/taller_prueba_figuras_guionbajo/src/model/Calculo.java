@@ -103,7 +103,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAB = Math.abs(raiz);
-            System.out.println("AB: "+resultadoTAB);
+            
         } catch (Exception e) {
             error = true;
         }
@@ -139,7 +139,7 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTAC = Math.abs(raiz);
-            System.out.println("AC : "+resultadoTAC);
+           
         } catch (Exception e) {
             error = true;
         }
