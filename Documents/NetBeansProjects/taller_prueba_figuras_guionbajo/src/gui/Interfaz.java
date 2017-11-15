@@ -371,22 +371,6 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
         }
 
-//        ver como rellenar barra de carga
-//        int n = 0;
-//        bar1.setMinimum(0);
-//        bar1.setMaximum(100);
-//        while(true){
-//            try {
-//                Thread.sleep(ALLBITS);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-//                bar1.setValue(n+=10);
-//                if(bar1.getValue()>= 100){
-//                    break;
-//                }
-//            }
-//        
-//        }
     }//GEN-LAST:event_btnProcederActionPerformed
 
     private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed

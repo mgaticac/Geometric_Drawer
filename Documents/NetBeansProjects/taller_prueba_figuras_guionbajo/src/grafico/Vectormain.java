@@ -1,5 +1,5 @@
 
-package model;
+package grafico;
 import javax.swing.*;//Crea ventana basica
 import java.awt.*; //Modo grafico.
 
