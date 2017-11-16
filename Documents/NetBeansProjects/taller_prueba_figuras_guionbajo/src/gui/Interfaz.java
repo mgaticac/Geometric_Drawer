@@ -2,6 +2,8 @@ package gui;
 
 import grafico.Vector;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -38,11 +40,12 @@ public class Interfaz extends javax.swing.JFrame {
         btnEliminarPuntos = new javax.swing.JButton();
         areaNota = new javax.swing.JTextArea();
         btnRegresar = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        cb1 = new javax.swing.JCheckBox();
+        cb2 = new javax.swing.JCheckBox();
+        cb3 = new javax.swing.JCheckBox();
+        cb4 = new javax.swing.JCheckBox();
         panelDibujar = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         ventanaPrinc = new javax.swing.JPanel();
@@ -125,6 +128,11 @@ public class Interfaz extends javax.swing.JFrame {
         btnEliminarPuntos.setBackground(new java.awt.Color(153, 255, 255));
         btnEliminarPuntos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnEliminarPuntos.setText("Eliminar los puntos Seleccionados");
+        btnEliminarPuntos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPuntosActionPerformed(evt);
+            }
+        });
         ventanaCalc.getContentPane().add(btnEliminarPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 240, -1));
 
         areaNota.setEditable(false);
@@ -146,40 +154,45 @@ public class Interfaz extends javax.swing.JFrame {
         });
         ventanaCalc.getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, -1, -1));
 
-        jCheckBox1.setBackground(new java.awt.Color(51, 0, 255));
-        jCheckBox1.setText("jCheckBox1");
-        jCheckBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaCalc.getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 20, -1));
+        cb1.setBackground(new java.awt.Color(51, 0, 255));
+        cb1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        ventanaCalc.getContentPane().add(cb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 20, -1));
 
-        jCheckBox2.setBackground(new java.awt.Color(51, 0, 255));
-        jCheckBox2.setText("jCheckBox2");
-        jCheckBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
-        ventanaCalc.getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 20, -1));
+        cb2.setBackground(new java.awt.Color(51, 0, 255));
+        cb2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
+        ventanaCalc.getContentPane().add(cb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 20, -1));
 
-        jCheckBox3.setBackground(new java.awt.Color(51, 0, 255));
-        jCheckBox3.setText("jCheckBox3");
-        jCheckBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
-        ventanaCalc.getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 20, -1));
+        cb3.setBackground(new java.awt.Color(51, 0, 255));
+        cb3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
+        ventanaCalc.getContentPane().add(cb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 20, -1));
 
-        jCheckBox4.setBackground(new java.awt.Color(51, 0, 255));
-        jCheckBox4.setText("jCheckBox4");
-        jCheckBox4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
-        ventanaCalc.getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 20, -1));
+        cb4.setBackground(new java.awt.Color(51, 0, 255));
+        cb4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255)));
+        ventanaCalc.getContentPane().add(cb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 20, -1));
 
         panelDibujar.setBackground(new java.awt.Color(204, 204, 255));
         panelDibujar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelDibujar.setMaximumSize(new java.awt.Dimension(30000, 30000));
         panelDibujar.setPreferredSize(new java.awt.Dimension(600, 600));
 
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 11)); // NOI18N
+        jLabel4.setText("INGRESE COORDENADAS");
+
         javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
         panelDibujar.setLayout(panelDibujarLayout);
         panelDibujarLayout.setHorizontalGroup(
             panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDibujarLayout.createSequentialGroup()
+                .addContainerGap(219, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(211, 211, 211))
         );
         panelDibujarLayout.setVerticalGroup(
             panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGroup(panelDibujarLayout.createSequentialGroup()
+                .addGap(228, 228, 228)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 610, 520));
@@ -187,9 +200,9 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 600));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 670));
 
-        ventanaCalc.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 600));
+        ventanaCalc.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 660));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -260,8 +273,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
         Graphics p = panelDibujar.getGraphics();
         Vector v = new Vector();
-        v.Cuadrado(p);
-
+        v.Plano(p);
         Calculo calculo = new Calculo();
 
         if (cantPuntos == 4) {
@@ -286,7 +298,14 @@ public class Interfaz extends javax.swing.JFrame {
             double dx = Double.valueOf(coordenada4[0]);
             double dy = Double.valueOf(coordenada4[1]);
 
-            if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
+            if (calculo.isError() == false) {
+                lblResultado.setText(calculo.getPerimetroCuadrado());
+
+            } else if(calculo.isError() == true){
+                JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
+            }
+            
+            if (calculo.isError() == false && ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
                     && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
                 calculo.punto1Cuadrado(ax, ay, bx, by);
                 calculo.punto2Cuadrado(bx, by, cx, cy);
@@ -296,13 +315,8 @@ public class Interfaz extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
 
             }
-
-            if (calculo.isError() == false) {
-                lblResultado.setText(calculo.getPerimetroCuadrado());
-
-            } else {
-                JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
-            }
+            
+            v.DibujarPlanoYFigura(300, 300, ax, ay, p);
 
         } else if (cantPuntos == 3) {
 
@@ -320,20 +334,19 @@ public class Interfaz extends javax.swing.JFrame {
             coordenada3 = txtPunto3.getText().split(",");
             double cx = Double.valueOf(coordenada3[0]);
             double cy = Double.valueOf(coordenada3[1]);
-            
-            
+
             if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20
                     && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20) {
                 calculo.punto1Triangulo(ax, ay, bx, by);
-            calculo.punto2Triangulo(bx, by, cx, cy);
+                calculo.punto2Triangulo(bx, by, cx, cy);
 
-            calculo.punto3Triangulo(cx, cy, ax, ay);
+                calculo.punto3Triangulo(cx, cy, ax, ay);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
 
             }
-            
+
             if (calculo.isError() == false) {
                 lblResultado.setText(calculo.getPerimetroTriangulo());
             } else {
@@ -346,10 +359,17 @@ public class Interfaz extends javax.swing.JFrame {
             if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     && calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+
+                p = panelDibujar.getGraphics();
+                v = new Vector();
+                v.Plano(p);
                 System.out.println("Triangulo Equilatero");
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     || calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
+                p = panelDibujar.getGraphics();
+                v = new Vector();
+                v.Plano(p);
                 System.out.println("Triangulo Isoceles");
             } else {
                 System.out.println("triangulo escaleno");
@@ -426,24 +446,31 @@ public class Interfaz extends javax.swing.JFrame {
         if (cantPuntos == 3) {
             lblB4.setVisible(false);
             txtPunto4.setVisible(false);
+            cb4.setVisible(false);
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
             lblResultado1.setText("Perimetro Triangulo: ");
+            Graphics p = panelDibujar.getGraphics();
+            Vector v = new Vector();
+            v.Plano(p);
 
         } else if (cantPuntos == 4) {
+            cb4.setVisible(true);
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
             lblResultado1.setText("Perimetro Cuadrado: ");
+
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
         }
 
+
     }//GEN-LAST:event_btnProcederActionPerformed
 
     private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed
-        
+
         if (1 == (cmbOpciones.getSelectedIndex())) {
             cantPuntos = 3;
         } else if (2 == cmbOpciones.getSelectedIndex()) {
@@ -451,8 +478,28 @@ public class Interfaz extends javax.swing.JFrame {
         } else {
             cantPuntos = 1;
         }
-        
+
     }//GEN-LAST:event_cmbOpcionesActionPerformed
+
+    private void btnEliminarPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPuntosActionPerformed
+        if (cb1.isSelected()) {
+            txtPunto1.setText("");
+            cb1.setSelected(false);
+        }
+        if (cb2.isSelected()) {
+            txtPunto2.setText("");
+            cb2.setSelected(false);
+        }
+        if (cb3.isSelected()) {
+            txtPunto3.setText("");
+            cb3.setSelected(false);
+        }
+        if (cb4.isSelected()) {
+            txtPunto4.setText("");
+            cb4.setSelected(false);
+        }
+
+    }//GEN-LAST:event_btnEliminarPuntosActionPerformed
 
     public static void main(String args[]) {
 
@@ -463,6 +510,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         });
         //codigo a ejecutarse al comienzo
+        Interfaz i = new Interfaz();
+        i.ventanaCalc.setBounds(100, 100, 1240, 1240);
 
         //termino de codigo
     }
@@ -473,14 +522,15 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JCheckBox cb1;
+    private javax.swing.JCheckBox cb2;
+    private javax.swing.JCheckBox cb3;
+    private javax.swing.JCheckBox cb4;
     private javax.swing.JComboBox<String> cmbOpciones;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblB1;
