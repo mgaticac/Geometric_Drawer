@@ -2,8 +2,6 @@ package gui;
 
 import grafico.Vector;
 import java.awt.Graphics;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
