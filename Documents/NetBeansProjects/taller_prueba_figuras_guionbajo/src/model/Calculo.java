@@ -5,7 +5,8 @@ public class Calculo {
     boolean error = false;
 
     double resultadoAB, resultadoBC, resultadoCD, resultadoAD, resultadoTAB, resultadoTBC, resultadoTAC;
-    double a, b;
+    double a, b,ar;
+    double D=0, d=0,h=0;
 
     
     //definicion punto1Cuadrado
@@ -162,7 +163,67 @@ public class Calculo {
         String perimetroT = String.valueOf(perimetroTriangulo);
         return perimetroT;
     }
-
+    
+    public String getAreaCuadrado(){
+        double area= resultadoAB*resultadoBC;
+        ar=area;
+        String areaC= String.valueOf(area);
+        return areaC;
+    }
+    
+    public String getAreaRectangulo(){
+        double area= resultadoAB*resultadoBC;
+        ar=area;
+        String areaR= String.valueOf(area);
+        return areaR;
+    }
+    public String getAreaRombo(){
+        double area= D*d/2; //SE DEBE PEDIR INFORMACIÓN ADICIONAL AL USUARIO.
+        ar=area;
+        String areaRO= String.valueOf(area);
+        return areaRO;
+        
+    }
+    public String getAreaRomboide(){
+        double area= resultadoAD*h;
+        ar=area;
+        String areaROM= String.valueOf(area);
+        return areaROM;
+    }
+    public String getAreaTrapecio(){
+        double area= (resultadoAD*resultadoBC)*h/2;
+        ar=area;
+        String areaTRA= String.valueOf(area);
+        return areaTRA;
+    }
+//    public String getAreaTrapezoideAsimetrico{){
+//        double area=(resultadoAB*/2)
+//    }//OJO CON ESTO QUE ESTA REDURISIMO.
+    
+    public String getAreaTriangulo(){//Equilatero
+        double altura= Math.sqrt(resultadoTAB*3)/2;
+        double area= altura*Math.pow(resultadoTAB, 2);
+        ar=area;
+        String areaT= String.valueOf(area);
+        return areaT;
+    }
+    public String getAreaTrianguloIsosceles(){
+        double area= (resultadoTAB*(Math.sqrt(Math.pow(resultadoTAC, 2))-resultadoTAB/4))/2;
+        //A partir de la multiplicación es la formula para determinar la altura.
+        ar=area;
+        String areaISOS= String.valueOf(area);
+        return areaISOS;
+        
+    }
+    public String getAreaTrianguloEscaleno(){
+        double semiperimetro=resultadoTAB+resultadoTBC+resultadoTAC/2;// es lo mismo que decir perimetroT/2;
+        double area= Math.sqrt((semiperimetro-resultadoTAB)*(semiperimetro-resultadoTBC)*(semiperimetro-resultadoTAC));
+        ar=area;
+        String areaESC= String.valueOf(area);
+        return areaESC;
+    }
+    
+    
     public double getResultadoAB() {
         return resultadoAB;
     }
@@ -198,5 +259,6 @@ public class Calculo {
     public double getB() {
         return b;
     }
+    
     
 }
