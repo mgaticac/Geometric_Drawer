@@ -55,7 +55,7 @@ public class Vector extends JPanel {
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
-        int y2 = 510;
+        int y2 = 610;
         g.setColor(Color.gray);
         g.drawLine(0, 0, 0, 630);
 
@@ -101,7 +101,7 @@ public class Vector extends JPanel {
 
         //figura
         g.setColor(Color.magenta);
-        g.drawLine(0, 0, ((int)xx2*30 + 300), (int)yy2*30 + 300);
+        g.drawLine(300, 300, ((int)xx2*30 + 300), (int)yy2*30 + 300);
         //figura
     }
 }

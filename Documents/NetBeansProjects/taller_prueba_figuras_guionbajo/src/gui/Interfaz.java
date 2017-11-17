@@ -63,15 +63,16 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         ventanaEstadisticas = new javax.swing.JInternalFrame();
-        jButton3 = new javax.swing.JButton();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        btnFinalizar = new javax.swing.JButton();
+        contTrapezoides = new javax.swing.JTextField();
+        contTrapecios = new javax.swing.JTextField();
+        contRoboides = new javax.swing.JTextField();
+        contRombos = new javax.swing.JTextField();
+        contRectangulos = new javax.swing.JTextField();
+        contCuadrados = new javax.swing.JTextField();
+        contTrianguloEquilatero = new javax.swing.JTextField();
+        contTrianguloiEscalenos = new javax.swing.JTextField();
+        contTrianguloisoceles1 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -79,9 +80,10 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         ventanaPrinc = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnProceder = new javax.swing.JButton();
@@ -303,132 +305,148 @@ public class Interfaz extends javax.swing.JFrame {
         ventanaEstadisticas.setVisible(true);
         ventanaEstadisticas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setBackground(new java.awt.Color(204, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setText("Salir");
-        ventanaEstadisticas.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 120, -1));
+        btnFinalizar.setBackground(new java.awt.Color(204, 255, 255));
+        btnFinalizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnFinalizar.setText("Finalizar");
+        ventanaEstadisticas.getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 120, -1));
 
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField14.setText("           0");
-        jTextField14.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 100, -1));
+        contTrapezoides.setEditable(false);
+        contTrapezoides.setBackground(new java.awt.Color(255, 255, 255));
+        contTrapezoides.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contTrapezoides.setText("           0");
+        contTrapezoides.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        ventanaEstadisticas.getContentPane().add(contTrapezoides, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 100, -1));
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField13.setText("           0");
-        jTextField13.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        contTrapecios.setEditable(false);
+        contTrapecios.setBackground(new java.awt.Color(255, 255, 255));
+        contTrapecios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contTrapecios.setText("           0");
+        contTrapecios.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contTrapecios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                contTrapeciosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrapecios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 100, -1));
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField12.setText("           0");
-        jTextField12.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        contRoboides.setEditable(false);
+        contRoboides.setBackground(new java.awt.Color(255, 255, 255));
+        contRoboides.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contRoboides.setText("           0");
+        contRoboides.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contRoboides.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                contRoboidesActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRoboides, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 100, -1));
 
-        jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField11.setText("           0");
-        jTextField11.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        contRombos.setEditable(false);
+        contRombos.setBackground(new java.awt.Color(255, 255, 255));
+        contRombos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contRombos.setText("           0");
+        contRombos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contRombos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                contRombosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRombos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 100, -1));
 
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField10.setText("           0");
-        jTextField10.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        contRectangulos.setEditable(false);
+        contRectangulos.setBackground(new java.awt.Color(255, 255, 255));
+        contRectangulos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contRectangulos.setText("           0");
+        contRectangulos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contRectangulos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                contRectangulosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRectangulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 100, -1));
 
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField9.setText("           0");
-        jTextField9.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 100, -1));
+        contCuadrados.setEditable(false);
+        contCuadrados.setBackground(new java.awt.Color(255, 255, 255));
+        contCuadrados.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contCuadrados.setText("           0");
+        contCuadrados.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        ventanaEstadisticas.getContentPane().add(contCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 100, -1));
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField8.setText("           0");
-        jTextField8.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 100, -1));
+        contTrianguloEquilatero.setEditable(false);
+        contTrianguloEquilatero.setBackground(new java.awt.Color(255, 255, 255));
+        contTrianguloEquilatero.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contTrianguloEquilatero.setText("           0");
+        contTrianguloEquilatero.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        ventanaEstadisticas.getContentPane().add(contTrianguloEquilatero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 100, -1));
 
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField7.setText("           0");
-        jTextField7.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        contTrianguloiEscalenos.setEditable(false);
+        contTrianguloiEscalenos.setBackground(new java.awt.Color(255, 255, 255));
+        contTrianguloiEscalenos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contTrianguloiEscalenos.setText("           0");
+        contTrianguloiEscalenos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contTrianguloiEscalenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                contTrianguloiEscalenosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrianguloiEscalenos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 100, -1));
+
+        contTrianguloisoceles1.setEditable(false);
+        contTrianguloisoceles1.setBackground(new java.awt.Color(255, 255, 255));
+        contTrianguloisoceles1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        contTrianguloisoceles1.setText("           0");
+        contTrianguloisoceles1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
+        contTrianguloisoceles1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contTrianguloisoceles1ActionPerformed(evt);
+            }
+        });
+        ventanaEstadisticas.getContentPane().add(contTrianguloisoceles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 100, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel19.setText("Trapesoide");
-        ventanaEstadisticas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 80, -1));
+        jLabel19.setText("Trapezoide");
+        ventanaEstadisticas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 80, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Trapecio");
-        ventanaEstadisticas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Romboide");
-        ventanaEstadisticas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 80, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("Rombo");
-        ventanaEstadisticas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 90, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Rectángulo");
-        ventanaEstadisticas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 90, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Cuadrado");
-        ventanaEstadisticas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 100, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel13.setText("Triángulo Isóceles");
-        ventanaEstadisticas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 110, -1));
+        jLabel13.setText("Triángulo Escalenos");
+        ventanaEstadisticas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel22.setText("Triángulo Isóceles");
+        ventanaEstadisticas.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("Triángulo Equilátero");
-        ventanaEstadisticas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 140, 20));
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        ventanaEstadisticas.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
         jLabel20.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jLabel20.setMinimumSize(new java.awt.Dimension(900, 900));
         jLabel20.setPreferredSize(new java.awt.Dimension(1000, 1000));
         ventanaEstadisticas.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 520));
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ventanaEstadisticas.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -457,6 +475,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -501,36 +524,67 @@ public class Interfaz extends javax.swing.JFrame {
         Vector v = new Vector();
         v.Plano(p);
         Calculo calculo = new Calculo();
-
+        int conttrianguloEq = 0;
+        int conttrianguloIs = 0;
+        int conttrianguloEs = 0;
+        int conttrapecio = 0;
+        int contcua = 0;
+        int contrect = 0;
+        int contromboide = 0;
+        int conttrapezoide = 0;
+        int contrombo = 0;
+        try {
+            contcua = Integer.parseInt(contCuadrados.getText());
+            contrect = Integer.parseInt(contRectangulos.getText());
+            contromboide = Integer.parseInt(contRoboides.getText());
+            contrombo = Integer.parseInt(contRombos.getText());
+            conttrapecio = Integer.parseInt(contTrapecios.getText());
+            conttrapezoide = Integer.parseInt(contTrapezoides.getText());
+            conttrianguloEq = Integer.parseInt(contTrianguloEquilatero.getText());
+            conttrianguloIs = Integer.parseInt(contTrianguloiEscalenos.getText());
+            conttrianguloEs = Integer.parseInt(contTrianguloiEscalenos.getText());
+        } catch (NumberFormatException numberFormatException) {
+        }
         if (cantPuntos == 4) {
             //Separacion de coordenadas Strings y se convierten a double guardandolas en variables
-            String[] coordenada1;
-            coordenada1 = txtPunto1.getText().split(",");
-            double ax = Double.valueOf(coordenada1[0]);
-            double ay = Double.valueOf(coordenada1[1]);
-
-            String[] coordenada2;
-            coordenada2 = txtPunto2.getText().split(",");
-            double bx = Double.valueOf(coordenada2[0]);
-            double by = Double.valueOf(coordenada2[1]);
-
-            String[] coordenada3;
-            coordenada3 = txtPunto3.getText().split(",");
-            double cx = Double.valueOf(coordenada3[0]);
-            double cy = Double.valueOf(coordenada3[1]);
-
-            String[] coordenada4;
-            coordenada4 = txtPunto4.getText().split(",");
-            double dx = Double.valueOf(coordenada4[0]);
-            double dy = Double.valueOf(coordenada4[1]);
+            double ax = 0;
+            double ay = 0;
+            double bx = 0;
+            double by = 0;
+            double cx = 0;
+            double cy = 0;
+            double dx = 0;
+            double dy = 0;
+            try {
+                String[] coordenada1;
+                coordenada1 = txtPunto1.getText().split(",");
+                ax = Double.valueOf(coordenada1[0]);
+                ay = Double.valueOf(coordenada1[1]);
+                
+                String[] coordenada2;
+                coordenada2 = txtPunto2.getText().split(",");
+                bx = Double.valueOf(coordenada2[0]);
+                by = Double.valueOf(coordenada2[1]);
+                
+                String[] coordenada3;
+                coordenada3 = txtPunto3.getText().split(",");
+                cx = Double.valueOf(coordenada3[0]);
+                cy = Double.valueOf(coordenada3[1]);
+                
+                String[] coordenada4;
+                coordenada4 = txtPunto4.getText().split(",");
+                dx = Double.valueOf(coordenada4[0]);
+                dy = Double.valueOf(coordenada4[1]);
+            } catch (NumberFormatException numberFormatException) {
+            }
 
             if (calculo.isError() == false) {
                 lblResultado.setText(calculo.getPerimetroCuadrado());
 
-            } else if(calculo.isError() == true){
+            } else if (calculo.isError() == true) {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
             }
-            
+
             if (calculo.isError() == false && ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
                     && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
                 calculo.punto1Cuadrado(ax, ay, bx, by);
@@ -541,25 +595,33 @@ public class Interfaz extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
 
             }
-            
+
             v.DibujarPlanoYFigura(300, 300, ax, ay, p);
 
         } else if (cantPuntos == 3) {
-
-            String[] coordenada1;
-            coordenada1 = txtPunto1.getText().split(",");
-            double ax = Double.valueOf(coordenada1[0]);
-            double ay = Double.valueOf(coordenada1[1]);
-
-            String[] coordenada2;
-            coordenada2 = txtPunto2.getText().split(",");
-            double bx = Double.valueOf(coordenada2[0]);
-            double by = Double.valueOf(coordenada2[1]);
-
-            String[] coordenada3;
-            coordenada3 = txtPunto3.getText().split(",");
-            double cx = Double.valueOf(coordenada3[0]);
-            double cy = Double.valueOf(coordenada3[1]);
+            double ax = 0;
+            double ay = 0;
+            double bx = 0;
+            double by = 0;
+            double cx = 0;
+            double cy = 0;
+            try {
+                String[] coordenada1;
+                coordenada1 = txtPunto1.getText().split(",");
+                ax = Double.valueOf(coordenada1[0]);
+                ay = Double.valueOf(coordenada1[1]);
+                
+                String[] coordenada2;
+                coordenada2 = txtPunto2.getText().split(",");
+                bx = Double.valueOf(coordenada2[0]);
+                by = Double.valueOf(coordenada2[1]);
+                
+                String[] coordenada3;
+                coordenada3 = txtPunto3.getText().split(",");
+                cx = Double.valueOf(coordenada3[0]);
+                cy = Double.valueOf(coordenada3[1]);
+            } catch (NumberFormatException numberFormatException) {
+            }
 
             if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20
                     && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20) {
@@ -590,6 +652,8 @@ public class Interfaz extends javax.swing.JFrame {
                 v = new Vector();
                 v.Plano(p);
                 System.out.println("Triangulo Equilatero");
+                conttrianguloEq += 1;
+                contTrianguloEquilatero.setText(String.valueOf(conttrianguloEq));
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     || calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
@@ -597,8 +661,15 @@ public class Interfaz extends javax.swing.JFrame {
                 v = new Vector();
                 v.Plano(p);
                 System.out.println("Triangulo Isoceles");
+                
+                conttrianguloIs += 1;
+                
+                contTrianguloisoceles1.setText(String.valueOf(conttrianguloIs));
             } else {
                 System.out.println("triangulo escaleno");
+                conttrianguloEs += 1;
+                
+                contTrianguloiEscalenos.setText(String.valueOf(conttrianguloEs));
             }
 
         }
@@ -640,18 +711,32 @@ public class Interfaz extends javax.swing.JFrame {
 
             if (trapecio == true) {
                 System.out.println("Trapecio");
+                conttrapecio += 1;
+                contTrapecios.setText(String.valueOf(conttrapecio));
             } else if (cuadrado == true) {
                 System.out.println("cuadrado");
+                contcua += 1;
+                
+                contCuadrados.setText(String.valueOf(contcua));
             } else if (rectangulo == true) {
                 System.out.println("rectangulo");
+                contrect += 1;
+                contRectangulos.setText(String.valueOf(contrect));
             } else if (romboide == true) {
                 System.out.println("romboide");
-            } else if (trapecio == true) {
-
+                contromboide+=1;
+                
+                contRoboides.setText(String.valueOf(contromboide));
             } else if (trapezoide == true) {
                 System.out.println("trapezoide");
+                conttrapezoide+=1;
+                
+                contTrapezoides.setText(String.valueOf(conttrapezoide));
             } else if (rombo == true) {
                 System.out.println("Rombo");
+                contrombo+=1;
+                
+                contRombos.setText(String.valueOf(contrombo));
             } else {
                 System.err.println("[Error]NO SE DETECTO NINGUNA FIGURA, LO SENTIMOS");
             }
@@ -727,25 +812,36 @@ public class Interfaz extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnEliminarPuntosActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void contTrapeciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrapeciosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_contTrapeciosActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void contRoboidesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRoboidesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_contRoboidesActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void contRombosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRombosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_contRombosActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void contRectangulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRectangulosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_contRectangulosActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void contTrianguloiEscalenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloiEscalenosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_contTrianguloiEscalenosActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        ventanaEstadisticas.setVisible(true);
+        ventanaEstadisticas.setFocusCycleRoot(true);
+        
+
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void contTrianguloisoceles1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloisoceles1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contTrianguloisoceles1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -764,6 +860,7 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaNota;
     private javax.swing.JButton btnEliminarPuntos;
+    private javax.swing.JButton btnFinalizar;
     private javax.swing.JButton btnIdentificar;
     private javax.swing.JButton btnProceder;
     private javax.swing.JButton btnRegresar;
@@ -773,8 +870,16 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JCheckBox cb3;
     private javax.swing.JCheckBox cb4;
     private javax.swing.JComboBox<String> cmbOpciones;
+    private javax.swing.JTextField contCuadrados;
+    private javax.swing.JTextField contRectangulos;
+    private javax.swing.JTextField contRoboides;
+    private javax.swing.JTextField contRombos;
+    private javax.swing.JTextField contTrapecios;
+    private javax.swing.JTextField contTrapezoides;
+    private javax.swing.JTextField contTrianguloEquilatero;
+    private javax.swing.JTextField contTrianguloiEscalenos;
+    private javax.swing.JTextField contTrianguloisoceles1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -788,6 +893,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -800,19 +906,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblB1;
     private javax.swing.JLabel lblB2;
     private javax.swing.JLabel lblB3;
