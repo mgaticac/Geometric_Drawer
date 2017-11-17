@@ -2,6 +2,7 @@ package gui;
 
 import grafico.Vector;
 import java.awt.Graphics;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -41,28 +42,14 @@ public class Interfaz extends javax.swing.JFrame {
         cb4 = new javax.swing.JCheckBox();
         panelDibujar = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        lblperimetro = new javax.swing.JLabel();
         lblResultado1 = new javax.swing.JLabel();
-        lblResultado = new javax.swing.JLabel();
+        lblArea = new javax.swing.JLabel();
+        lblResultado2 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        btnTraslacion = new javax.swing.JButton();
         fondoA = new javax.swing.JLabel();
-        ventanaExtra = new javax.swing.JInternalFrame();
-        jButton2 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        ventanaEstadisticas = new javax.swing.JInternalFrame();
-        btnFinalizar = new javax.swing.JButton();
+        ventanaEstadisticas = new javax.swing.JFrame();
         contTrapezoides = new javax.swing.JTextField();
         contTrapecios = new javax.swing.JTextField();
         contRoboides = new javax.swing.JTextField();
@@ -72,6 +59,7 @@ public class Interfaz extends javax.swing.JFrame {
         contTrianguloEquilatero = new javax.swing.JTextField();
         contTrianguloiEscalenos = new javax.swing.JTextField();
         contTrianguloisoceles1 = new javax.swing.JTextField();
+        btnFinalizar = new javax.swing.JToggleButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -83,6 +71,21 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        ventanaExtra = new javax.swing.JFrame();
+        ventanaPanel = new javax.swing.JPanel();
+        btnRegr = new javax.swing.JButton();
+        btnCalculoTralacion = new javax.swing.JButton();
+        txtVtraslacion = new javax.swing.JTextField();
+        lblVect = new javax.swing.JLabel();
+        p4 = new javax.swing.JTextField();
+        p3 = new javax.swing.JTextField();
+        p2 = new javax.swing.JTextField();
+        p1 = new javax.swing.JTextField();
+        lblp4 = new javax.swing.JLabel();
+        lblp3 = new javax.swing.JLabel();
+        lblp2 = new javax.swing.JLabel();
+        lblp1 = new javax.swing.JLabel();
+        lblfnd = new javax.swing.JLabel();
         ventanaPrinc = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnProceder = new javax.swing.JButton();
@@ -206,14 +209,23 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblResultado1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado1.setText("Perimetro :");
-        jPanel2.add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 200, 30));
+        lblperimetro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblperimetro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblperimetro.setText("Perimetro :");
+        jPanel2.add(lblperimetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 90, 30));
 
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setText("--------------------------");
-        jPanel2.add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 150, 30));
+        lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado1.setText("--------------------------");
+        jPanel2.add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 150, 20));
+
+        lblArea.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArea.setText("Area :");
+        jPanel2.add(lblArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 80, 30));
+
+        lblResultado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado2.setText("--------------------------");
+        jPanel2.add(lblResultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 150, 20));
 
         btnRegresar.setBackground(new java.awt.Color(153, 255, 255));
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -223,220 +235,289 @@ public class Interfaz extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 580, -1, -1));
+        jPanel2.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, -1));
+
+        btnTraslacion.setBackground(new java.awt.Color(153, 255, 255));
+        btnTraslacion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnTraslacion.setText("Continuar");
+        btnTraslacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTraslacionActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnTraslacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 90, -1));
 
         fondoA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
         jPanel2.add(fondoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 830));
 
         ventanaCalc.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 660));
 
-        ventanaExtra.setPreferredSize(new java.awt.Dimension(592, 320));
-        ventanaExtra.setVisible(true);
-        ventanaExtra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setText("Continuar");
-        ventanaExtra.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 140, -1));
-
-        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 150, -1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("             Ingrese altura");
-        ventanaExtra.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 170, -1));
-
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 150, 20));
-
-        jLabel9.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setText("       Ingresar vector de traslación");
-        ventanaExtra.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 260, 30));
-
-        jTextField4.setEditable(false);
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 90, -1));
-
-        jTextField3.setEditable(false);
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 90, -1));
-
-        jTextField2.setEditable(false);
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 90, -1));
-
-        jTextField1.setEditable(false);
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
-        ventanaExtra.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 90, -1));
-
-        jLabel8.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jLabel8.setText("punto 4");
-        ventanaExtra.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jLabel7.setText("punto 3");
-        ventanaExtra.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
-
-        jLabel6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jLabel6.setText("punto 2");
-        ventanaExtra.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jLabel5.setText("punto 1");
-        ventanaExtra.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 80, 20));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
-        ventanaExtra.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 320));
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        ventanaExtra.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 546, 926, -1));
-
-        ventanaEstadisticas.setVisible(true);
         ventanaEstadisticas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnFinalizar.setBackground(new java.awt.Color(204, 255, 255));
-        btnFinalizar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnFinalizar.setText("Finalizar");
-        ventanaEstadisticas.getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 120, -1));
 
         contTrapezoides.setEditable(false);
         contTrapezoides.setBackground(new java.awt.Color(255, 255, 255));
         contTrapezoides.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contTrapezoides.setText("           0");
+        contTrapezoides.setText("0");
         contTrapezoides.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(contTrapezoides, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 100, -1));
+        contTrapezoides.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contTrapezoidesActionPerformed(evt);
+            }
+        });
+        ventanaEstadisticas.getContentPane().add(contTrapezoides, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 40, -1));
 
         contTrapecios.setEditable(false);
         contTrapecios.setBackground(new java.awt.Color(255, 255, 255));
         contTrapecios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contTrapecios.setText("           0");
+        contTrapecios.setText("0");
         contTrapecios.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contTrapecios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contTrapeciosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contTrapecios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrapecios, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 40, -1));
 
         contRoboides.setEditable(false);
         contRoboides.setBackground(new java.awt.Color(255, 255, 255));
         contRoboides.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contRoboides.setText("           0");
+        contRoboides.setText("0");
         contRoboides.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contRoboides.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contRoboidesActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contRoboides, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRoboides, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 40, -1));
 
         contRombos.setEditable(false);
         contRombos.setBackground(new java.awt.Color(255, 255, 255));
         contRombos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contRombos.setText("           0");
+        contRombos.setText("0");
         contRombos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contRombos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contRombosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contRombos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRombos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 40, -1));
 
         contRectangulos.setEditable(false);
         contRectangulos.setBackground(new java.awt.Color(255, 255, 255));
         contRectangulos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contRectangulos.setText("           0");
+        contRectangulos.setText("0");
         contRectangulos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contRectangulos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contRectangulosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contRectangulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contRectangulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 40, -1));
 
         contCuadrados.setEditable(false);
         contCuadrados.setBackground(new java.awt.Color(255, 255, 255));
         contCuadrados.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contCuadrados.setText("           0");
+        contCuadrados.setText("0");
         contCuadrados.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(contCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 40, -1));
 
         contTrianguloEquilatero.setEditable(false);
         contTrianguloEquilatero.setBackground(new java.awt.Color(255, 255, 255));
         contTrianguloEquilatero.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contTrianguloEquilatero.setText("           0");
+        contTrianguloEquilatero.setText("0");
         contTrianguloEquilatero.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
-        ventanaEstadisticas.getContentPane().add(contTrianguloEquilatero, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrianguloEquilatero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 40, -1));
 
         contTrianguloiEscalenos.setEditable(false);
         contTrianguloiEscalenos.setBackground(new java.awt.Color(255, 255, 255));
         contTrianguloiEscalenos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contTrianguloiEscalenos.setText("           0");
+        contTrianguloiEscalenos.setText("0");
         contTrianguloiEscalenos.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contTrianguloiEscalenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contTrianguloiEscalenosActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contTrianguloiEscalenos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrianguloiEscalenos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 40, -1));
 
         contTrianguloisoceles1.setEditable(false);
         contTrianguloisoceles1.setBackground(new java.awt.Color(255, 255, 255));
         contTrianguloisoceles1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        contTrianguloisoceles1.setText("           0");
+        contTrianguloisoceles1.setText("0");
         contTrianguloisoceles1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(51, 0, 255)));
         contTrianguloisoceles1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contTrianguloisoceles1ActionPerformed(evt);
             }
         });
-        ventanaEstadisticas.getContentPane().add(contTrianguloisoceles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 100, -1));
+        ventanaEstadisticas.getContentPane().add(contTrianguloisoceles1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 40, -1));
+
+        btnFinalizar.setBackground(new java.awt.Color(142, 255, 255));
+        btnFinalizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnFinalizar.setText("Finalizar");
+        btnFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinalizarActionPerformed(evt);
+            }
+        });
+        ventanaEstadisticas.getContentPane().add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 270, 80));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel19.setText("Trapezoide");
-        ventanaEstadisticas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 80, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 80, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Trapecio");
-        ventanaEstadisticas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Romboide");
-        ventanaEstadisticas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 80, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("Rombo");
-        ventanaEstadisticas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 90, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Rectángulo");
-        ventanaEstadisticas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 90, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Cuadrado");
-        ventanaEstadisticas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 100, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("Triángulo Escalenos");
-        ventanaEstadisticas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 120, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel22.setText("Triángulo Isóceles");
-        ventanaEstadisticas.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, -1));
+        ventanaEstadisticas.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 110, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("Triángulo Equilátero");
-        ventanaEstadisticas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
+        ventanaEstadisticas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 140, 20));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
         jLabel20.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jLabel20.setMinimumSize(new java.awt.Dimension(900, 900));
         jLabel20.setPreferredSize(new java.awt.Dimension(1000, 1000));
-        ventanaEstadisticas.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 520));
+        ventanaEstadisticas.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 560));
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         ventanaEstadisticas.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        ventanaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnRegr.setBackground(new java.awt.Color(204, 240, 240));
+        btnRegr.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnRegr.setText("Regresar");
+        btnRegr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegrActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(btnRegr, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+
+        btnCalculoTralacion.setBackground(new java.awt.Color(204, 255, 255));
+        btnCalculoTralacion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCalculoTralacion.setText("Continuar");
+        btnCalculoTralacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculoTralacionActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(btnCalculoTralacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 90, 30));
+
+        txtVtraslacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        txtVtraslacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVtraslacionActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(txtVtraslacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 140, 30));
+
+        lblVect.setBackground(new java.awt.Color(204, 255, 255));
+        lblVect.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblVect.setText("       Ingresar vector de traslación");
+        ventanaPanel.add(lblVect, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 230, 20));
+
+        p4.setEditable(false);
+        p4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        p4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p4ActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(p4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 80, 20));
+
+        p3.setEditable(false);
+        p3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        p3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p3ActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(p3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 80, 20));
+
+        p2.setEditable(false);
+        p2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        p2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p2ActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(p2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 80, 20));
+
+        p1.setEditable(false);
+        p1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 255), 2));
+        p1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                p1ActionPerformed(evt);
+            }
+        });
+        ventanaPanel.add(p1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 80, 20));
+
+        lblp4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        lblp4.setText("punto 4");
+        ventanaPanel.add(lblp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 50, 20));
+
+        lblp3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        lblp3.setText("punto 3");
+        ventanaPanel.add(lblp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 50, 30));
+
+        lblp2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        lblp2.setText("punto 2");
+        ventanaPanel.add(lblp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 50, 30));
+
+        lblp1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        lblp1.setText("punto 1");
+        ventanaPanel.add(lblp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 50, 30));
+
+        lblfnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/model/figures.jpg"))); // NOI18N
+        lblfnd.setFocusCycleRoot(true);
+        ventanaPanel.add(lblfnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 430));
+
+        javax.swing.GroupLayout ventanaExtraLayout = new javax.swing.GroupLayout(ventanaExtra.getContentPane());
+        ventanaExtra.getContentPane().setLayout(ventanaExtraLayout);
+        ventanaExtraLayout.setHorizontalGroup(
+            ventanaExtraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(ventanaExtraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventanaExtraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(ventanaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        ventanaExtraLayout.setVerticalGroup(
+            ventanaExtraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 430, Short.MAX_VALUE)
+            .addGroup(ventanaExtraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventanaExtraLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(ventanaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -503,7 +584,7 @@ public class Interfaz extends javax.swing.JFrame {
         txtPunto2.setText("");
         txtPunto3.setText("");
         txtPunto4.setText("");
-        lblResultado.setText("-----------------------");
+        lblResultado1.setText("-----------------------");
         cmbOpciones.setSelectedIndex(0);
         lblB4.setVisible(true);
         txtPunto4.setVisible(true);
@@ -514,8 +595,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         Graphics p = panelDibujar.getGraphics();
         Vector v = new Vector();
-        
-        
+
         Calculo calculo = new Calculo();
         int conttrianguloEq = 0;
         int conttrianguloIs = 0;
@@ -573,7 +653,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
 
             if (calculo.isError() == false) {
-                lblResultado.setText(calculo.getPerimetroCuadrado());
+                lblResultado1.setText(calculo.getPerimetroCuadrado());
 
             } else if (calculo.isError() == true) {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
@@ -630,7 +710,8 @@ public class Interfaz extends javax.swing.JFrame {
             }
 
             if (calculo.isError() == false) {
-                lblResultado.setText(calculo.getPerimetroTriangulo());
+                lblResultado1.setText(calculo.getPerimetroTriangulo());
+                
             } else {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
             }
@@ -643,6 +724,7 @@ public class Interfaz extends javax.swing.JFrame {
                     && calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
                 System.out.println("Triangulo Equilatero");
+                lblResultado2.setText(calculo.getAreaTrianguloEquilatero());
                 conttrianguloEq += 1;
                 contTrianguloEquilatero.setText(String.valueOf(conttrianguloEq));
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
@@ -650,12 +732,13 @@ public class Interfaz extends javax.swing.JFrame {
                     || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
 
                 System.out.println("Triangulo Isoceles");
-
                 conttrianguloIs += 1;
+                lblResultado2.setText(calculo.getAreaTrianguloIsosceles());
 
                 contTrianguloisoceles1.setText(String.valueOf(conttrianguloIs));
             } else {
                 System.out.println("triangulo escaleno");
+                lblResultado2.setText(calculo.getAreaTrianguloEscaleno());
                 conttrianguloEs += 1;
 
                 contTrianguloiEscalenos.setText(String.valueOf(conttrianguloEs));
@@ -750,7 +833,7 @@ public class Interfaz extends javax.swing.JFrame {
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
-            lblResultado1.setText("Perimetro Triangulo: ");
+            lblperimetro.setText("Perimetro Triangulo: ");
             Graphics p = panelDibujar.getGraphics();
             Vector v = new Vector();
             v.Plano(p);
@@ -760,7 +843,7 @@ public class Interfaz extends javax.swing.JFrame {
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
-            lblResultado1.setText("Perimetro Cuadrado: ");
+            lblperimetro.setText("Perimetro Cuadrado: ");
 
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
@@ -822,8 +905,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_contTrianguloiEscalenosActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        ventanaEstadisticas.setFocusable(true);
         ventanaEstadisticas.setVisible(true);
-        ventanaEstadisticas.setFocusCycleRoot(true);
+        ventanaEstadisticas.setBounds(0, 0, 690, 550);
+        ventanaPrinc.setVisible(false);
 
 
     }//GEN-LAST:event_btnSalirActionPerformed
@@ -831,6 +916,119 @@ public class Interfaz extends javax.swing.JFrame {
     private void contTrianguloisoceles1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloisoceles1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contTrianguloisoceles1ActionPerformed
+
+    private void btnTraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraslacionActionPerformed
+
+        ventanaExtra.setBounds(0, 0, 620, 460);
+        ventanaExtra.setFocusCycleRoot(true);
+        ventanaExtra.setVisible(true);
+        p1.setText(txtPunto1.getText());
+        p2.setText(txtPunto2.getText());
+        p3.setText(txtPunto3.getText());
+        p4.setText(txtPunto4.getText());
+        if (cantPuntos == 3) {
+            lblp4.setVisible(false);
+            p4.setVisible(false);
+        }
+
+    }//GEN-LAST:event_btnTraslacionActionPerformed
+
+    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnFinalizarActionPerformed
+
+    private void contTrapezoidesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrapezoidesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contTrapezoidesActionPerformed
+
+    private void p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1ActionPerformed
+
+    }//GEN-LAST:event_p1ActionPerformed
+
+    private void p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2ActionPerformed
+
+    }//GEN-LAST:event_p2ActionPerformed
+
+    private void p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3ActionPerformed
+
+    }//GEN-LAST:event_p3ActionPerformed
+
+    private void p4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4ActionPerformed
+
+    }//GEN-LAST:event_p4ActionPerformed
+
+    private void btnCalculoTralacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculoTralacionActionPerformed
+
+        String[] c1;
+        String[] c2;
+        String[] c3;
+        String[] c4;
+        String[] c0;
+        double pa1, pa2, pb1, pb2, pc1, pc2, pd1, pd2, v1, v2;
+
+        if (cantPuntos == 3) {
+            c0 = txtVtraslacion.getText().split(",");
+            v1 = Double.valueOf(c0[0]);
+            v2 = Double.valueOf(c0[1]);
+            c1 = p1.getText().split(",");
+            pa1 = Double.valueOf(c1[0]) + v1;
+            pa2 = Double.valueOf(c1[1]) + v2;
+
+            c2 = p2.getText().split(",");
+            pb1 = Double.valueOf(c2[0]) + v1;
+            pb2 = Double.valueOf(c2[1]) + v2;
+
+            c3 = p3.getText().split(",");
+            pc1 = Double.valueOf(c3[0]) + v1;
+            pc2 = Double.valueOf(c3[1]) + v2;
+
+            p1.setText(pa1 + "," + pa2);
+            p2.setText(pb1 + "," + pb2);
+            p3.setText(pc1 + "," + pc2);
+
+        } else if (cantPuntos == 4) {
+            c0 = txtVtraslacion.getText().split(",");
+            v1 = Double.valueOf(c0[0]);
+            v2 = Double.valueOf(c0[1]);
+            c1 = p1.getText().split(",");
+            pa1 = Double.valueOf(c1[0]) + v1;
+            pa2 = Double.valueOf(c1[1]) + v2;
+
+            c2 = p2.getText().split(",");
+            pb1 = Double.valueOf(c2[0]) + v1;
+            pb2 = Double.valueOf(c2[1]) + v2;
+
+            c3 = p3.getText().split(",");
+            pc1 = Double.valueOf(c3[0]) + v1;
+            pc2 = Double.valueOf(c3[1]) + v2;
+
+            c4 = p4.getText().split(",");
+            pd1 = Double.valueOf(c4[0]) + v1;
+            pd2 = Double.valueOf(c4[1]) + v2;
+
+            p1.setText(pa1 + "," + pa2);
+            p2.setText(pb1 + "," + pb2);
+            p3.setText(pc1 + "," + pc2);
+            p4.setText(pd1 + "," + pd2);
+
+        }
+
+
+    }//GEN-LAST:event_btnCalculoTralacionActionPerformed
+
+    private void txtVtraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVtraslacionActionPerformed
+
+    }//GEN-LAST:event_txtVtraslacionActionPerformed
+
+    private void btnRegrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegrActionPerformed
+        p1.setText("");
+        p2.setText("");
+        p3.setText("");
+        p4.setText("");
+        txtVtraslacion.setText("");
+        ventanaExtra.setVisible(false);
+        
+    }//GEN-LAST:event_btnRegrActionPerformed
 
     public static void main(String args[]) {
 
@@ -848,12 +1046,15 @@ public class Interfaz extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaNota;
+    private javax.swing.JButton btnCalculoTralacion;
     private javax.swing.JButton btnEliminarPuntos;
-    private javax.swing.JButton btnFinalizar;
+    private javax.swing.JToggleButton btnFinalizar;
     private javax.swing.JButton btnIdentificar;
     private javax.swing.JButton btnProceder;
+    private javax.swing.JButton btnRegr;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnTraslacion;
     private javax.swing.JCheckBox cb1;
     private javax.swing.JCheckBox cb2;
     private javax.swing.JCheckBox cb3;
@@ -869,10 +1070,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField contTrianguloiEscalenos;
     private javax.swing.JTextField contTrianguloisoceles1;
     private javax.swing.JLabel fondoA;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -884,35 +1082,37 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel lblArea;
     private javax.swing.JLabel lblB1;
     private javax.swing.JLabel lblB2;
     private javax.swing.JLabel lblB3;
     private javax.swing.JLabel lblB4;
-    private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblResultado1;
+    private javax.swing.JLabel lblResultado2;
+    private javax.swing.JLabel lblVect;
+    private javax.swing.JLabel lblfnd;
+    private javax.swing.JLabel lblp1;
+    private javax.swing.JLabel lblp2;
+    private javax.swing.JLabel lblp3;
+    private javax.swing.JLabel lblp4;
+    private javax.swing.JLabel lblperimetro;
+    private javax.swing.JTextField p1;
+    private javax.swing.JTextField p2;
+    private javax.swing.JTextField p3;
+    private javax.swing.JTextField p4;
     private javax.swing.JPanel panelDibujar;
     private javax.swing.JTextField txtPunto1;
     private javax.swing.JTextField txtPunto2;
     private javax.swing.JTextField txtPunto3;
     private javax.swing.JTextField txtPunto4;
+    private javax.swing.JTextField txtVtraslacion;
     private javax.swing.JFrame ventanaCalc;
-    private javax.swing.JInternalFrame ventanaEstadisticas;
-    private javax.swing.JInternalFrame ventanaExtra;
+    private javax.swing.JFrame ventanaEstadisticas;
+    private javax.swing.JFrame ventanaExtra;
+    private javax.swing.JPanel ventanaPanel;
     private javax.swing.JPanel ventanaPrinc;
     // End of variables declaration//GEN-END:variables
 }
