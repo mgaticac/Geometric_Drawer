@@ -20,7 +20,7 @@ public class Vector extends JPanel {
             x1 += 30;
             x2 += 30;
 
-            if (x2 >= 630) {
+            if (x2 >= 800) {
                 break;
             }
         }
@@ -33,7 +33,7 @@ public class Vector extends JPanel {
         g.drawLine(0, 0, 0, 500);
         while (true) {
             if (y1 == 300 && y2 == 300) {
-                g.setColor(Color.black);
+                g.setColor(Color.red);
             } else {
 
                 g.setColor(Color.gray);
@@ -43,25 +43,25 @@ public class Vector extends JPanel {
             y1 += 30;
             y2 += 30;
 
-            if (y2 >= 630) {
+            if (y2 >= 800) {
                 break;
             }
         }
 
     }
 
-    public void DibujarPlanoYFigura(double xx1, double yy1, double xx2, double yy2, Graphics g) {
+    public void DibujarPlanoYFigura(double ax1, double ay1, double bx1, double by1, double cx1, double cy1, double dx1, double dy1, Graphics g) {
         //Plano
         int x1 = 0;
         int y1 = 0;
         int x2 = 0;
-        int y2 = 610;
-        g.setColor(Color.gray);
-        g.drawLine(0, 0, 0, 630);
+        int y2 = 630;
+        g.setColor(Color.GRAY);
+        g.drawLine(0, 0, 0, 600);
 
         while (true) {
             if (x1 == 300 && x2 == 300) {
-                g.setColor(Color.BLACK);
+                g.setColor(Color.red);
             } else {
                 g.setColor(Color.GRAY);
             }
@@ -78,14 +78,14 @@ public class Vector extends JPanel {
         y1 = 0;
         x2 = 630;
         y2 = 0;
-        g.setColor(Color.BLACK);
-        g.drawLine(0, 0, 0, 500);
+        g.setColor(Color.GRAY);
+        g.drawLine(0, 0, 0, 600);
         while (true) {
             if (y1 == 300 && y2 == 300) {
-                g.setColor(Color.GRAY);
+                g.setColor(Color.red);
             } else {
 
-                g.setColor(Color.BLACK);
+                g.setColor(Color.GRAY);
 
             }
             g.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
@@ -95,13 +95,17 @@ public class Vector extends JPanel {
             if (y2 >= 630) {
                 break;
             }
-            
+
         }
         //Plano
 
         //figura
-        g.setColor(Color.magenta);
-        g.drawLine(300, 300, ((int)xx2*30 + 300), (int)yy2*30 + 300);
+        g.setColor(Color.BLACK);
+        g.drawLine(300+(((int)ax1*30)),(300-((int)ay1*30)),300+(((int)bx1*30)),300-(((int)by1*30)));
+        g.drawLine(300+(((int)bx1*30)),(300-((int)by1*30)),300+(((int)cx1*30)),300-(((int)cy1*30)));
+        g.drawLine(300+(((int)cx1*30)),(300-((int)cy1*30)),300+(((int)dx1*30)),300-(((int)dy1*30)));
+        g.drawLine(300+(((int)dx1*30)),(300-((int)dy1*30)),300+(((int)ax1*30)),300-(((int)ay1*30)));
+        
         //figura
     }
 }
