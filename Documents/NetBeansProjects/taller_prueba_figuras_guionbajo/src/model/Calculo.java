@@ -21,7 +21,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoAB = Math.abs(raiz);
-            System.out.println(resultadoAB);
 
         } catch (Exception e) {
             error = true;
@@ -41,7 +40,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoBC = Math.abs(raiz);
-            System.out.println(resultadoBC);
 
         } catch (Exception e) {
             error = true;
@@ -62,7 +60,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoCD = Math.abs(raiz);
-            System.out.println(resultadoCD);
 
         } catch (Exception e) {
             error = true;
@@ -83,7 +80,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoAD = Math.abs(raiz);
-            System.out.println(resultadoAD);
 
         } catch (Exception e) {
             error = true;
@@ -121,7 +117,6 @@ public class Calculo {
 
             double raiz = Math.sqrt(suma);
             resultadoTBC = Math.abs(raiz);
-            System.out.println("BC: " + resultadoTBC);
         } catch (Exception e) {
             error = true;
         }

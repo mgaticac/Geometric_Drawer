@@ -507,14 +507,15 @@ public class Interfaz extends javax.swing.JFrame {
         cmbOpciones.setSelectedIndex(0);
         lblB4.setVisible(true);
         txtPunto4.setVisible(true);
-        
+
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
-        
+
         Graphics p = panelDibujar.getGraphics();
         Vector v = new Vector();
-        v.Plano(p);
+        
+        
         Calculo calculo = new Calculo();
         int conttrianguloEq = 0;
         int conttrianguloIs = 0;
@@ -552,23 +553,23 @@ public class Interfaz extends javax.swing.JFrame {
                 coordenada1 = txtPunto1.getText().split(",");
                 ax = Double.valueOf(coordenada1[0]);
                 ay = Double.valueOf(coordenada1[1]);
-                
+
                 String[] coordenada2;
                 coordenada2 = txtPunto2.getText().split(",");
                 bx = Double.valueOf(coordenada2[0]);
                 by = Double.valueOf(coordenada2[1]);
-                
+
                 String[] coordenada3;
                 coordenada3 = txtPunto3.getText().split(",");
                 cx = Double.valueOf(coordenada3[0]);
                 cy = Double.valueOf(coordenada3[1]);
-                
+
                 String[] coordenada4;
                 coordenada4 = txtPunto4.getText().split(",");
                 dx = Double.valueOf(coordenada4[0]);
                 dy = Double.valueOf(coordenada4[1]);
             } catch (Exception numberFormatException) {
-                
+
             }
 
             if (calculo.isError() == false) {
@@ -589,7 +590,7 @@ public class Interfaz extends javax.swing.JFrame {
 
             }
 
-            v.DibujarPlanoYFigura(ax,ay ,bx ,by ,cx,cy,dx,dy, p);
+            v.DibujarPlanoYCuadrado(ax, ay, bx, by, cx, cy, dx, dy, p);
 
         } else if (cantPuntos == 3) {
             double ax = 0;
@@ -603,12 +604,12 @@ public class Interfaz extends javax.swing.JFrame {
                 coordenada1 = txtPunto1.getText().split(",");
                 ax = Double.valueOf(coordenada1[0]);
                 ay = Double.valueOf(coordenada1[1]);
-                
+
                 String[] coordenada2;
                 coordenada2 = txtPunto2.getText().split(",");
                 bx = Double.valueOf(coordenada2[0]);
                 by = Double.valueOf(coordenada2[1]);
-                
+
                 String[] coordenada3;
                 coordenada3 = txtPunto3.getText().split(",");
                 cx = Double.valueOf(coordenada3[0]);
@@ -633,6 +634,7 @@ public class Interfaz extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
             }
+            v.DibujarPlanoYTriangulo(ax, ay, bx, by, cx, cy, p);
         }
 
         if (cantPuntos == 3) {
@@ -640,28 +642,22 @@ public class Interfaz extends javax.swing.JFrame {
             if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     && calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
-
-                p = panelDibujar.getGraphics();
-                v = new Vector();
-                v.Plano(p);
                 System.out.println("Triangulo Equilatero");
                 conttrianguloEq += 1;
                 contTrianguloEquilatero.setText(String.valueOf(conttrianguloEq));
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     || calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
-                p = panelDibujar.getGraphics();
-                v = new Vector();
-                v.Plano(p);
+
                 System.out.println("Triangulo Isoceles");
-                
+
                 conttrianguloIs += 1;
-                
+
                 contTrianguloisoceles1.setText(String.valueOf(conttrianguloIs));
             } else {
                 System.out.println("triangulo escaleno");
                 conttrianguloEs += 1;
-                
+
                 contTrianguloiEscalenos.setText(String.valueOf(conttrianguloEs));
             }
 
@@ -709,7 +705,7 @@ public class Interfaz extends javax.swing.JFrame {
             } else if (cuadrado == true) {
                 System.out.println("cuadrado");
                 contcua += 1;
-                
+
                 contCuadrados.setText(String.valueOf(contcua));
             } else if (rectangulo == true) {
                 System.out.println("rectangulo");
@@ -717,18 +713,18 @@ public class Interfaz extends javax.swing.JFrame {
                 contRectangulos.setText(String.valueOf(contrect));
             } else if (romboide == true) {
                 System.out.println("romboide");
-                contromboide+=1;
-                
+                contromboide += 1;
+
                 contRoboides.setText(String.valueOf(contromboide));
             } else if (trapezoide == true) {
                 System.out.println("trapezoide");
-                conttrapezoide+=1;
-                
+                conttrapezoide += 1;
+
                 contTrapezoides.setText(String.valueOf(conttrapezoide));
             } else if (rombo == true) {
                 System.out.println("Rombo");
-                contrombo+=1;
-                
+                contrombo += 1;
+
                 contRombos.setText(String.valueOf(contrombo));
             } else {
                 System.err.println("[Error]NO SE DETECTO NINGUNA FIGURA, LO SENTIMOS");
@@ -828,7 +824,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         ventanaEstadisticas.setVisible(true);
         ventanaEstadisticas.setFocusCycleRoot(true);
-        
+
 
     }//GEN-LAST:event_btnSalirActionPerformed
 
