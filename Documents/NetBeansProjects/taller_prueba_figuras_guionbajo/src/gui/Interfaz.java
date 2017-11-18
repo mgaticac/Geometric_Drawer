@@ -40,6 +40,43 @@ public class Interfaz extends javax.swing.JFrame {
         cb3 = new javax.swing.JCheckBox();
         cb4 = new javax.swing.JCheckBox();
         panelDibujar = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblperimetro = new javax.swing.JLabel();
         lblResultado1 = new javax.swing.JLabel();
@@ -192,17 +229,116 @@ public class Interfaz extends javax.swing.JFrame {
         panelDibujar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelDibujar.setMaximumSize(new java.awt.Dimension(30000, 30000));
         panelDibujar.setPreferredSize(new java.awt.Dimension(600, 600));
+        panelDibujar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelDibujar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 53, -1, -1));
 
-        javax.swing.GroupLayout panelDibujarLayout = new javax.swing.GroupLayout(panelDibujar);
-        panelDibujar.setLayout(panelDibujarLayout);
-        panelDibujarLayout.setHorizontalGroup(
-            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
-        );
-        panelDibujarLayout.setVerticalGroup(
-            panelDibujarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
-        );
+        jLabel4.setText("8");
+        panelDibujar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 10, -1));
+
+        jLabel5.setText("7");
+        panelDibujar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 10, -1));
+
+        jLabel6.setText("6");
+        panelDibujar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 10, -1));
+
+        jLabel7.setText("5");
+        panelDibujar.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 10, -1));
+
+        jLabel8.setText("4");
+        panelDibujar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 20, -1));
+
+        jLabel9.setText("3");
+        panelDibujar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 16, -1));
+
+        jLabel10.setText("2");
+        panelDibujar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 16, -1));
+
+        jLabel11.setText("1");
+        panelDibujar.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 16, -1));
+
+        jLabel21.setText("1");
+        panelDibujar.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 14, -1));
+
+        jLabel23.setText("6");
+        panelDibujar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 15, -1));
+
+        jLabel24.setText("2");
+        panelDibujar.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 10, -1));
+
+        jLabel25.setText("7");
+        panelDibujar.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 15, -1));
+
+        jLabel26.setText("3");
+        panelDibujar.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 16, -1));
+
+        jLabel27.setText("8");
+        panelDibujar.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 17, -1));
+
+        jLabel28.setText("4");
+        panelDibujar.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 13, -1));
+
+        jLabel29.setText("9");
+        panelDibujar.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 16, -1));
+
+        jLabel31.setText("- 9");
+        panelDibujar.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 20, -1));
+
+        jLabel32.setText("- 1");
+        panelDibujar.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
+
+        jLabel33.setText("- 2");
+        panelDibujar.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 20, -1));
+
+        jLabel34.setText("- 3");
+        panelDibujar.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 20, -1));
+
+        jLabel35.setText("- 4");
+        panelDibujar.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, -1, 20));
+
+        jLabel36.setText("- 5");
+        panelDibujar.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 20, -1));
+
+        jLabel37.setText("- 3");
+        panelDibujar.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 20, -1));
+
+        jLabel38.setText("- 1");
+        panelDibujar.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 20, -1));
+
+        jLabel39.setText("- 4");
+        panelDibujar.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 20, -1));
+
+        jLabel40.setText("- 2");
+        panelDibujar.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 20, -1));
+
+        jLabel41.setText("- 6");
+        panelDibujar.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 20, -1));
+
+        jLabel42.setText("- 5");
+        panelDibujar.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 20, -1));
+
+        jLabel43.setText("- 7");
+        panelDibujar.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 20, -1));
+
+        jLabel44.setText("- 8");
+        panelDibujar.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 20, -1));
+
+        jLabel45.setText("9");
+        panelDibujar.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 20, -1));
+
+        jLabel30.setText("5");
+        panelDibujar.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 20, -1));
+
+        jLabel46.setText("- 6");
+        panelDibujar.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
+
+        jLabel47.setText("- 7");
+        panelDibujar.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, -1, -1));
+
+        jLabel48.setText("- 8");
+        panelDibujar.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 20, -1));
+
+        jLabel49.setText("- 9");
+        panelDibujar.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, -1, -1));
 
         ventanaCalc.getContentPane().add(panelDibujar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 600, 600));
 
@@ -211,6 +347,7 @@ public class Interfaz extends javax.swing.JFrame {
         lblperimetro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblperimetro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblperimetro.setText("Perimetro :");
+        lblperimetro.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 0)));
         jPanel2.add(lblperimetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 90, 30));
 
         lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -220,6 +357,7 @@ public class Interfaz extends javax.swing.JFrame {
         lblArea.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblArea.setText("Area :");
+        lblArea.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 0)));
         jPanel2.add(lblArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 80, 30));
 
         lblResultado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1126,6 +1264,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField contTrianguloisoceles1;
     private javax.swing.JLabel fondoA;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1136,7 +1276,42 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
