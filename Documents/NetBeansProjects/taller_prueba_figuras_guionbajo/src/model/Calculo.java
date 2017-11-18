@@ -182,14 +182,14 @@ public class Calculo {
     }
 
     public String getAreaRombo() {
-        double area = D * d / 2; //SE DEBE PEDIR INFORMACIÓN ADICIONAL AL USUARIO.
+        double area = D * d / 2; 
         ar = area;
         String areaRO = String.valueOf(area);
         return areaRO;
     }
 
     public String getPerimetroRombo() {
-        double perimetro = 4 * resultadoAB;//Se asume que sus 4 lados son iguales.
+        double perimetro = 4 * resultadoAB;
         per = perimetro;
         String perimetroROMBO = String.valueOf(perimetro);
         return perimetroROMBO;
@@ -216,7 +216,7 @@ public class Calculo {
         return areaTRA;
     }
     //EL PERIMETRO DEL TRAPECIO ES LA SUMA DE TODOS SUS LADOS.
-    
+
 //    public String getAreaTrapezoideAsimetrico{){
 //        double area=(resultadoAB*/2)
 //    }//OJO CON ESTO QUE ESTA REDURISIMO.

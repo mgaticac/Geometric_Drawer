@@ -2,7 +2,6 @@ package gui;
 
 import grafico.Vector;
 import java.awt.Graphics;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
@@ -169,7 +168,7 @@ public class Interfaz extends javax.swing.JFrame {
         areaNota.setColumns(20);
         areaNota.setFont(new java.awt.Font("Courier New", 1, 13)); // NOI18N
         areaNota.setRows(5);
-        areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 20.\n\n\nEJ: \" 20,20 (Maximo) \" \n    \" 0,0(Minimo) \".\n\n");
+        areaNota.setText("NOTA: Solo puede ingresar\nnumeros menores o iguales\na 10.\n\n\nEJ: \" 10,10 (Maximo) \" \n    \" -10,-10(Minimo) \".\n\n");
         areaNota.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 51, 51)));
         ventanaCalc.getContentPane().add(areaNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 250, 140));
 
@@ -578,7 +577,7 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        ventanaPrinc.setFocusCycleRoot(true);
+        
         ventanaCalc.setVisible(false);
         txtPunto1.setText("");
         txtPunto2.setText("");
@@ -588,7 +587,7 @@ public class Interfaz extends javax.swing.JFrame {
         cmbOpciones.setSelectedIndex(0);
         lblB4.setVisible(true);
         txtPunto4.setVisible(true);
-
+        ventanaPrinc.setFocusCycleRoot(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
@@ -659,18 +658,17 @@ public class Interfaz extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
             }
 
-            if (calculo.isError() == false && ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20 && dx >= -20 && dy >= -20
-                    && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20 && dx <= 20 && dy <= 20) {
+            if (calculo.isError() == false && ax >= -10 && ay >= -10 && bx >= -10 && by >= -10 && cx >= -10 && cy >= -10 && dx >= -10 && dy >= -10
+                    && ax <= 10 && ay <= 10 && bx <= 10 && by <= 10 && cx <= 10 && cy <= 10 && dx <= 10 && dy <= 10) {
                 calculo.punto1Cuadrado(ax, ay, bx, by);
                 calculo.punto2Cuadrado(bx, by, cx, cy);
                 calculo.punto3Cuadrado(cx, cy, dx, dy);
                 calculo.punto4Cuadrado(dx, dy, ax, ay);
+                v.DibujarPlanoYCuadrado(ax, ay, bx, by, cx, cy, dx, dy, p);
             } else {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
 
             }
-
-            v.DibujarPlanoYCuadrado(ax, ay, bx, by, cx, cy, dx, dy, p);
 
         } else if (cantPuntos == 3) {
             double ax = 0;
@@ -697,12 +695,13 @@ public class Interfaz extends javax.swing.JFrame {
             } catch (Exception numberFormatException) {
             }
 
-            if (ax >= -20 && ay >= -20 && bx >= -20 && by >= -20 && cx >= -20 && cy >= -20
-                    && ax <= 20 && ay <= 20 && bx <= 20 && by <= 20 && cx <= 20 && cy <= 20) {
+            if (ax >= -10 && ay >= -10 && bx >= -10 && by >= -10 && cx >= -10 && cy >= -10
+                    && ax <= 10 && ay <= 10 && bx <= 10 && by <= 10 && cx <= 10 && cy <= 10) {
                 calculo.punto1Triangulo(ax, ay, bx, by);
                 calculo.punto2Triangulo(bx, by, cx, cy);
-
                 calculo.punto3Triangulo(cx, cy, ax, ay);
+
+                v.DibujarPlanoYTriangulo(ax, ay, bx, by, cx, cy, p);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
@@ -711,11 +710,11 @@ public class Interfaz extends javax.swing.JFrame {
 
             if (calculo.isError() == false) {
                 lblResultado1.setText(calculo.getPerimetroTriangulo());
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "[ERROR] No ingresó un dato en un campo,\n o ingresó un caractér no permitido.");
             }
-            v.DibujarPlanoYTriangulo(ax, ay, bx, by, cx, cy, p);
+
         }
 
         if (cantPuntos == 3) {
@@ -784,30 +783,34 @@ public class Interfaz extends javax.swing.JFrame {
             if (trapecio == true) {
                 System.out.println("Trapecio");
                 conttrapecio += 1;
+                lblResultado2.setText(calculo.getAreaTrapecio());
                 contTrapecios.setText(String.valueOf(conttrapecio));
             } else if (cuadrado == true) {
                 System.out.println("cuadrado");
                 contcua += 1;
-
+                lblResultado2.setText(calculo.getAreaCuadrado());
                 contCuadrados.setText(String.valueOf(contcua));
             } else if (rectangulo == true) {
                 System.out.println("rectangulo");
                 contrect += 1;
                 contRectangulos.setText(String.valueOf(contrect));
+                lblResultado2.setText(calculo.getAreaRectangulo());
             } else if (romboide == true) {
                 System.out.println("romboide");
+                lblResultado2.setText(calculo.getAreaRomboide());
                 contromboide += 1;
 
                 contRoboides.setText(String.valueOf(contromboide));
             } else if (trapezoide == true) {
                 System.out.println("trapezoide");
+                //REEDUROOO
                 conttrapezoide += 1;
 
                 contTrapezoides.setText(String.valueOf(conttrapezoide));
             } else if (rombo == true) {
                 System.out.println("Rombo");
+                lblResultado2.setText(calculo.getAreaRombo());
                 contrombo += 1;
-
                 contRombos.setText(String.valueOf(contrombo));
             } else {
                 System.err.println("[Error]NO SE DETECTO NINGUNA FIGURA, LO SENTIMOS");
@@ -834,9 +837,6 @@ public class Interfaz extends javax.swing.JFrame {
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
             lblperimetro.setText("Perimetro Triangulo: ");
-            Graphics p = panelDibujar.getGraphics();
-            Vector v = new Vector();
-            v.Plano(p);
 
         } else if (cantPuntos == 4) {
             cb4.setVisible(true);
@@ -1021,13 +1021,68 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtVtraslacionActionPerformed
 
     private void btnRegrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegrActionPerformed
+
+        String[] c1;
+        String[] c2;
+        String[] c3;
+        String[] c4;
+        String[] c0;
+        double pa1, pa2, pb1, pb2, pc1, pc2, pd1, pd2, v1, v2;
+
+        if (cantPuntos == 3) {
+            c0 = txtVtraslacion.getText().split(",");
+            v1 = Double.valueOf(c0[0]);
+            v2 = Double.valueOf(c0[1]);
+            c1 = p1.getText().split(",");
+            pa1 = Double.valueOf(c1[0]) + v1;
+            pa2 = Double.valueOf(c1[1]) + v2;
+
+            c2 = p2.getText().split(",");
+            pb1 = Double.valueOf(c2[0]) + v1;
+            pb2 = Double.valueOf(c2[1]) + v2;
+
+            c3 = p3.getText().split(",");
+            pc1 = Double.valueOf(c3[0]) + v1;
+            pc2 = Double.valueOf(c3[1]) + v2;
+
+            txtPunto1.setText(pa1 + "," + pa2);
+            txtPunto2.setText(pb1 + "," + pb2);
+            txtPunto3.setText(pc1 + "," + pc2);
+
+        } else if (cantPuntos == 4) {
+            c0 = txtVtraslacion.getText().split(",");
+            v1 = Double.valueOf(c0[0]);
+            v2 = Double.valueOf(c0[1]);
+            c1 = p1.getText().split(",");
+            pa1 = Double.valueOf(c1[0]) + v1;
+            pa2 = Double.valueOf(c1[1]) + v2;
+
+            c2 = p2.getText().split(",");
+            pb1 = Double.valueOf(c2[0]) + v1;
+            pb2 = Double.valueOf(c2[1]) + v2;
+
+            c3 = p3.getText().split(",");
+            pc1 = Double.valueOf(c3[0]) + v1;
+            pc2 = Double.valueOf(c3[1]) + v2;
+
+            c4 = p4.getText().split(",");
+            pd1 = Double.valueOf(c4[0]) + v1;
+            pd2 = Double.valueOf(c4[1]) + v2;
+
+            txtPunto1.setText(pa1 + "," + pa2);
+            txtPunto2.setText(pb1 + "," + pb2);
+            txtPunto3.setText(pc1 + "," + pc2);
+            txtPunto4.setText(pd1 + "," + pd2);
+
+        }
+
+        ventanaExtra.setVisible(false);
         p1.setText("");
         p2.setText("");
         p3.setText("");
         p4.setText("");
         txtVtraslacion.setText("");
-        ventanaExtra.setVisible(false);
-        
+
     }//GEN-LAST:event_btnRegrActionPerformed
 
     public static void main(String args[]) {

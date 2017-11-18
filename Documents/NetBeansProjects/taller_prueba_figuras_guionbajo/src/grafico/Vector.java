@@ -100,7 +100,7 @@ public class Vector extends JPanel {
         //Plano
 
         //figura
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.RED);
         g.drawLine(300 + (((int) ax1 * 30)), (300 - ((int) ay1 * 30)), 300 + (((int) bx1 * 30)), 300 - (((int) by1 * 30)));
         g.drawLine(300 + (((int) bx1 * 30)), (300 - ((int) by1 * 30)), 300 + (((int) cx1 * 30)), 300 - (((int) cy1 * 30)));
         g.drawLine(300 + (((int) cx1 * 30)), (300 - ((int) cy1 * 30)), 300 + (((int) dx1 * 30)), 300 - (((int) dy1 * 30)));
@@ -158,7 +158,7 @@ public class Vector extends JPanel {
         
 
         //figura
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.RED);
         g.drawLine(300 + (((int) ax1 * 30)), (300 - ((int) ay1 * 30)), 300 + (((int) bx1 * 30)), 300 - (((int) by1 * 30)));
         g.drawLine(300 + (((int) bx1 * 30)), (300 - ((int) by1 * 30)), 300 + (((int) cx1 * 30)), 300 - (((int) cy1 * 30)));
         g.drawLine(300 + (((int) cx1 * 30)), (300 - ((int) cy1 * 30)), 300 + (((int) ax1 * 30)), 300 - (((int) ay1 * 30)));
