@@ -862,6 +862,7 @@ public class Interfaz extends javax.swing.JFrame {
                     && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
                 System.out.println("Triangulo Equilatero");
                 lblResultado2.setText(calculo.getAreaTrianguloEquilatero());
+                lblResultado1.setText(calculo.getPerimetroTrianguloEquilatero());
                 conttrianguloEq += 1;
                 contTrianguloEquilatero.setText(String.valueOf(conttrianguloEq));
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
@@ -871,13 +872,13 @@ public class Interfaz extends javax.swing.JFrame {
                 System.out.println("Triangulo Isoceles");
                 conttrianguloIs += 1;
                 lblResultado2.setText(calculo.getAreaTrianguloIsosceles());
-
+                lblResultado1.setText(calculo.getPerimetroTrianguloIsosceles());
                 contTrianguloisoceles1.setText(String.valueOf(conttrianguloIs));
             } else {
                 System.out.println("triangulo escaleno");
                 lblResultado2.setText(calculo.getAreaTrianguloEscaleno());
                 conttrianguloEs += 1;
-
+                //El perimetro es la suma de todos los lados.°°°°
                 contTrianguloiEscalenos.setText(String.valueOf(conttrianguloEs));
             }
 
@@ -922,20 +923,24 @@ public class Interfaz extends javax.swing.JFrame {
                 System.out.println("Trapecio");
                 conttrapecio += 1;
                 lblResultado2.setText(calculo.getAreaTrapecio());
+                //El perimetro es la suma de todos los lados.°°°°
                 contTrapecios.setText(String.valueOf(conttrapecio));
             } else if (cuadrado == true) {
                 System.out.println("cuadrado");
                 contcua += 1;
                 lblResultado2.setText(calculo.getAreaCuadrado());
+                //El perimetro es la suma de todos los lados.°°°°
                 contCuadrados.setText(String.valueOf(contcua));
             } else if (rectangulo == true) {
                 System.out.println("rectangulo");
                 contrect += 1;
                 contRectangulos.setText(String.valueOf(contrect));
                 lblResultado2.setText(calculo.getAreaRectangulo());
+                lblResultado1.setText(calculo.getPerimetroRectangulo());
             } else if (romboide == true) {
                 System.out.println("romboide");
                 lblResultado2.setText(calculo.getAreaRomboide());
+                lblResultado1.setText(calculo.getPerimetroRomboide());
                 contromboide += 1;
 
                 contRoboides.setText(String.valueOf(contromboide));
@@ -948,6 +953,7 @@ public class Interfaz extends javax.swing.JFrame {
             } else if (rombo == true) {
                 System.out.println("Rombo");
                 lblResultado2.setText(calculo.getAreaRombo());
+                lblResultado1.setText(calculo.getPerimetroRombo());
                 contrombo += 1;
                 contRombos.setText(String.valueOf(contrombo));
             } else {
