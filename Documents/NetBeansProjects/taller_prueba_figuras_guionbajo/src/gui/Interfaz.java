@@ -2,23 +2,21 @@ package gui;
 
 import grafico.Vector;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Calculo;
 
-/**
- *
- * @author XZeroMarx
- */
 public class Interfaz extends javax.swing.JFrame {
 
     int cantPuntos;
 
     public Interfaz() {
         initComponents();
+        Hilo h = new Hilo();
+        h.start();
     }
 
-    //codigo propio
-    //codigo propio
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -124,6 +122,8 @@ public class Interfaz extends javax.swing.JFrame {
         lblfnd = new javax.swing.JLabel();
         ventanaPrinc = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        lblTiempo = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
         btnProceder = new javax.swing.JButton();
         cmbOpciones = new javax.swing.JComboBox<>();
         btnSalir = new javax.swing.JButton();
@@ -661,6 +661,12 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTiempo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 70, 30));
+
+        jLabel50.setText("Tiempo ejecucion:");
+        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 20));
+
         btnProceder.setBackground(new java.awt.Color(153, 255, 204));
         btnProceder.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnProceder.setText("Proceder");
@@ -713,9 +719,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        
         ventanaCalc.setVisible(false);
         txtPunto1.setText("");
         txtPunto2.setText("");
@@ -727,9 +731,7 @@ public class Interfaz extends javax.swing.JFrame {
         txtPunto4.setVisible(true);
         ventanaPrinc.setFocusCycleRoot(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
-
     private void btnIdentificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIdentificarActionPerformed
-
         Graphics p = panelDibujar.getGraphics();
         Vector v = new Vector();
 
@@ -962,17 +964,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btnIdentificarActionPerformed
-
     private void txtPunto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto4ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtPunto4ActionPerformed
-
     private void txtPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtPunto1ActionPerformed
-
     private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
-
         if (cantPuntos == 3) {
             lblB4.setVisible(false);
             txtPunto4.setVisible(false);
@@ -992,12 +988,8 @@ public class Interfaz extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
         }
-
-
     }//GEN-LAST:event_btnProcederActionPerformed
-
     private void cmbOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOpcionesActionPerformed
-
         if (1 == (cmbOpciones.getSelectedIndex())) {
             cantPuntos = 3;
         } else if (2 == cmbOpciones.getSelectedIndex()) {
@@ -1005,9 +997,7 @@ public class Interfaz extends javax.swing.JFrame {
         } else {
             cantPuntos = 1;
         }
-
     }//GEN-LAST:event_cmbOpcionesActionPerformed
-
     private void btnEliminarPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPuntosActionPerformed
         if (cb1.isSelected()) {
             txtPunto1.setText("");
@@ -1025,44 +1015,26 @@ public class Interfaz extends javax.swing.JFrame {
             txtPunto4.setText("");
             cb4.setSelected(false);
         }
-
     }//GEN-LAST:event_btnEliminarPuntosActionPerformed
-
     private void contTrapeciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrapeciosActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contTrapeciosActionPerformed
-
     private void contRoboidesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRoboidesActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contRoboidesActionPerformed
-
     private void contRombosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRombosActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contRombosActionPerformed
-
     private void contRectangulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contRectangulosActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contRectangulosActionPerformed
-
     private void contTrianguloiEscalenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloiEscalenosActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contTrianguloiEscalenosActionPerformed
-
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         ventanaEstadisticas.setFocusable(true);
         ventanaEstadisticas.setVisible(true);
         ventanaEstadisticas.setBounds(0, 0, 690, 550);
         ventanaPrinc.setVisible(false);
-
-
     }//GEN-LAST:event_btnSalirActionPerformed
-
     private void contTrianguloisoceles1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloisoceles1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contTrianguloisoceles1ActionPerformed
-
     private void btnTraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraslacionActionPerformed
-
         ventanaExtra.setBounds(0, 0, 620, 460);
         ventanaExtra.setFocusCycleRoot(true);
         ventanaExtra.setVisible(true);
@@ -1074,35 +1046,22 @@ public class Interfaz extends javax.swing.JFrame {
             lblp4.setVisible(false);
             p4.setVisible(false);
         }
-
     }//GEN-LAST:event_btnTraslacionActionPerformed
-
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
+        JOptionPane.showMessageDialog(null, "El tiempo de ejecución del programa fue de " + lblTiempo.getText() + " segundos");
         System.exit(0);
     }//GEN-LAST:event_btnFinalizarActionPerformed
-
     private void contTrapezoidesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrapezoidesActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_contTrapezoidesActionPerformed
-
     private void p1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1ActionPerformed
-
     }//GEN-LAST:event_p1ActionPerformed
-
     private void p2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2ActionPerformed
-
     }//GEN-LAST:event_p2ActionPerformed
-
     private void p3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p3ActionPerformed
-
     }//GEN-LAST:event_p3ActionPerformed
-
     private void p4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p4ActionPerformed
-
     }//GEN-LAST:event_p4ActionPerformed
-
     private void btnCalculoTralacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculoTralacionActionPerformed
-
         String[] c1;
         String[] c2;
         String[] c3;
@@ -1156,14 +1115,9 @@ public class Interfaz extends javax.swing.JFrame {
             p4.setText(pd1 + "," + pd2);
 
         }
-
-
     }//GEN-LAST:event_btnCalculoTralacionActionPerformed
-
     private void txtVtraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVtraslacionActionPerformed
-
     }//GEN-LAST:event_txtVtraslacionActionPerformed
-
     private void btnRegrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegrActionPerformed
 
         String[] c1;
@@ -1217,31 +1171,21 @@ public class Interfaz extends javax.swing.JFrame {
             txtPunto2.setText(pb1 + "," + pb2);
             txtPunto3.setText(pc1 + "," + pc2);
             txtPunto4.setText(pd1 + "," + pd2);
-
         }
-
         ventanaExtra.setVisible(false);
         p1.setText("");
         p2.setText("");
         p3.setText("");
         p4.setText("");
         txtVtraslacion.setText("");
-
     }//GEN-LAST:event_btnRegrActionPerformed
 
     public static void main(String args[]) {
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz().setVisible(true);
             }
-
         });
-        //codigo a ejecutarse al comienzo
-        Interfaz i = new Interfaz();
-        i.ventanaCalc.setBounds(100, 100, 1240, 1240);
-
-        //termino de codigo
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaNota;
@@ -1314,6 +1258,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1328,6 +1273,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel lblB4;
     private javax.swing.JLabel lblResultado1;
     private javax.swing.JLabel lblResultado2;
+    private javax.swing.JLabel lblTiempo;
     private javax.swing.JLabel lblVect;
     private javax.swing.JLabel lblfnd;
     private javax.swing.JLabel lblp1;
@@ -1351,4 +1297,20 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel ventanaPanel;
     private javax.swing.JPanel ventanaPrinc;
     // End of variables declaration//GEN-END:variables
+public class Hilo extends Thread {
+
+        private int i = 0;
+
+        @Override
+        public void run() {
+            while (true) {
+                try {
+                    lblTiempo.setText(Integer.toString(i++));
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
 }

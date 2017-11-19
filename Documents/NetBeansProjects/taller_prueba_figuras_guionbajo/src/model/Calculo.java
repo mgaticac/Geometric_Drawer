@@ -8,7 +8,6 @@ public class Calculo {
     double a, b, ar, per;
     double D = 0, d = 0, h = 0;
 
-    //definicion punto1Cuadrado
     public void punto1Cuadrado(double ax1, double ay1, double bx1, double by1) {
         try {
             double resta1 = ((double) bx1 - (double) ax1);
@@ -27,7 +26,6 @@ public class Calculo {
         }
     }
 
-    //definicion punto2Cuadrado
     public void punto2Cuadrado(double bx1, double by1, double cx1, double cy1) {
         try {
             double resta1 = ((double) cx1 - (double) bx1);
@@ -47,7 +45,6 @@ public class Calculo {
 
     }
 
-    //definicion punto3Cuadrado
     public void punto3Cuadrado(double cx1, double cy1, double dx1, double dy1) {
         try {
             double resta1 = ((double) dx1 - (double) cx1);
@@ -67,7 +64,6 @@ public class Calculo {
 
     }
 
-    //definicion punto4Cuadrado
     public void punto4Cuadrado(double dx1, double dy1, double ax1, double ay1) {
         try {
             double resta1 = ((double) ax1 - (double) dx1);
@@ -157,7 +153,6 @@ public class Calculo {
         String perimetroT = String.valueOf(perimetroTriangulo);
         return perimetroT;
     }
-    //AREAS Y PERIMETROS DE LA FIGURAS.
 
     public String getAreaCuadrado() {
         double area = resultadoAB * resultadoBC;
@@ -165,7 +160,6 @@ public class Calculo {
         String areaC = String.valueOf(area);
         return areaC;
     }
-    //EL PERIMETRO DEL CUADRADO ES LA SUMA DE TODOS SUS LADOS.
 
     public String getAreaRectangulo() {
         double area = resultadoAB * resultadoBC;
@@ -182,7 +176,7 @@ public class Calculo {
     }
 
     public String getAreaRombo() {
-        double area = D * d / 2; 
+        double area = D * d / 2;
         ar = area;
         String areaRO = String.valueOf(area);
         return areaRO;
@@ -215,11 +209,6 @@ public class Calculo {
         String areaTRA = String.valueOf(area);
         return areaTRA;
     }
-    //EL PERIMETRO DEL TRAPECIO ES LA SUMA DE TODOS SUS LADOS.
-
-//    public String getAreaTrapezoideAsimetrico{){
-//        double area=(resultadoAB*/2)
-//    }//OJO CON ESTO QUE ESTA REDURISIMO.
 
     public String getAreaTrianguloEquilatero() {
         double altura = Math.sqrt(resultadoTAB * 3) / 2;
@@ -258,7 +247,6 @@ public class Calculo {
         String areaESC = String.valueOf(area);
         return areaESC;
     }
-    //El perimetro del triangulo escaleno es la suma de todos sus lados.
 
     public double getResultadoAB() {
         return resultadoAB;
