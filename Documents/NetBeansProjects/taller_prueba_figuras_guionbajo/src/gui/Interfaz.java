@@ -662,10 +662,10 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTiempo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 70, 30));
+        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 20));
 
         jLabel50.setText("Tiempo ejecucion:");
-        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 100, 20));
+        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, 20));
 
         btnProceder.setBackground(new java.awt.Color(153, 255, 204));
         btnProceder.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
