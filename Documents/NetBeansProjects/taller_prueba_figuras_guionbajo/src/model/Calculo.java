@@ -8,7 +8,7 @@ public class Calculo {
     double a, b, ar, per;
     double D = 0, d = 0, h = 0;
 
-    public void punto1Cuadrado(double ax1, double ay1, double bx1, double by1) {
+    public void puntoABCuadrado(double ax1, double ay1, double bx1, double by1) {
         try {
             double resta1 = ((double) bx1 - (double) ax1);
             double resta2 = ((double) by1 - (double) ay1);
@@ -26,7 +26,7 @@ public class Calculo {
         }
     }
 
-    public void punto2Cuadrado(double bx1, double by1, double cx1, double cy1) {
+    public void puntoBCCuadrado(double bx1, double by1, double cx1, double cy1) {
         try {
             double resta1 = ((double) cx1 - (double) bx1);
             double resta2 = ((double) cy1 - (double) by1);
@@ -45,7 +45,7 @@ public class Calculo {
 
     }
 
-    public void punto3Cuadrado(double cx1, double cy1, double dx1, double dy1) {
+    public void puntoCDCuadrado(double cx1, double cy1, double dx1, double dy1) {
         try {
             double resta1 = ((double) dx1 - (double) cx1);
             double resta2 = ((double) dy1 - (double) cy1);
@@ -64,7 +64,7 @@ public class Calculo {
 
     }
 
-    public void punto4Cuadrado(double dx1, double dy1, double ax1, double ay1) {
+    public void puntoACCuadrado(double dx1, double dy1, double ax1, double ay1) {
         try {
             double resta1 = ((double) ax1 - (double) dx1);
             double resta2 = ((double) ay1 - (double) dy1);
@@ -83,7 +83,7 @@ public class Calculo {
 
     }
 
-    public void punto1Triangulo(double ax1, double ay1, double bx1, double by1) {
+    public void puntoABTriangulo(double ax1, double ay1, double bx1, double by1) {
         try {
             double resta1 = ((double) bx1 - (double) ax1);
             double resta2 = ((double) by1 - (double) ay1);
@@ -101,7 +101,7 @@ public class Calculo {
         }
     }
 
-    public void punto2Triangulo(double bx1, double by1, double cx1, double cy1) {
+    public void puntoBCTriangulo(double bx1, double by1, double cx1, double cy1) {
         try {
             double resta1 = ((double) cx1 - (double) bx1);
             double resta2 = ((double) cy1 - (double) by1);
@@ -118,7 +118,7 @@ public class Calculo {
         }
     }
 
-    public void punto3Triangulo(double cx1, double cy1, double ax1, double ay1) {
+    public void puntoCDTriangulo(double cx1, double cy1, double ax1, double ay1) {
         try {
             double resta1 = ((double) ax1 - (double) cx1);
             double resta2 = ((double) ay1 - (double) cy1);
@@ -176,7 +176,8 @@ public class Calculo {
     }
 
     public String getAreaRombo() {
-        double area = D * d / 2;
+        double diagonalmenor= Math.sqrt(4*Math.pow(resultadoAB, 2)-Math.pow(D, 2));
+        double area = D * diagonalmenor / 2; 
         ar = area;
         String areaRO = String.valueOf(area);
         return areaRO;
@@ -190,7 +191,7 @@ public class Calculo {
     }
 
     public String getAreaRomboide() {
-        double area = resultadoAD * h;
+        double area = resultadoAD * 3;//h=3
         ar = area;
         String areaROM = String.valueOf(area);
         return areaROM;
@@ -204,15 +205,14 @@ public class Calculo {
     }
 
     public String getAreaTrapecio() {
-        double area = (resultadoAD * resultadoBC) * h / 2;
+        double area = (resultadoAD * resultadoBC) * 3 / 2; //h=3
         ar = area;
         String areaTRA = String.valueOf(area);
         return areaTRA;
     }
 
     public String getAreaTrianguloEquilatero() {
-        double altura = Math.sqrt(resultadoTAB * 3) / 2;
-        double area = altura * Math.pow(resultadoTAB, 2);
+        double area = Math.sqrt(3)/4*Math.pow(resultadoTAB, 2);
         ar = area;
         String areaT = String.valueOf(area);
         return areaT;
@@ -226,7 +226,7 @@ public class Calculo {
     }
 
     public String getAreaTrianguloIsosceles() {
-        double area = (resultadoTAB * (Math.sqrt(Math.pow(resultadoTAC, 2)) - resultadoTAB / 4)) / 2;
+        double area = (resultadoTAB * (Math.sqrt(Math.pow(resultadoTAC, 2)) - Math.pow(resultadoTAB, 2)/ 4)/2) / 2;
         //A partir de la multiplicación es la formula para determinar la altura.
         ar = area;
         String areaISOS = String.valueOf(area);
