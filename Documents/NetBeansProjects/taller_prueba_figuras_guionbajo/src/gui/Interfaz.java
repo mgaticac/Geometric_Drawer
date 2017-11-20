@@ -800,10 +800,10 @@ public class Interfaz extends javax.swing.JFrame {
 
             if (calculo.isError() == false && ax >= -10 && ay >= -10 && bx >= -10 && by >= -10 && cx >= -10 && cy >= -10 && dx >= -10 && dy >= -10
                     && ax <= 10 && ay <= 10 && bx <= 10 && by <= 10 && cx <= 10 && cy <= 10 && dx <= 10 && dy <= 10) {
-                calculo.punto1Cuadrado(ax, ay, bx, by);
-                calculo.punto2Cuadrado(bx, by, cx, cy);
-                calculo.punto3Cuadrado(cx, cy, dx, dy);
-                calculo.punto4Cuadrado(dx, dy, ax, ay);
+                calculo.puntoABCuadrado(ax, ay, bx, by);
+                calculo.puntoBCCuadrado(bx, by, cx, cy);
+                calculo.puntoCDCuadrado(cx, cy, dx, dy);
+                calculo.puntoADCuadrado(dx, dy, ax, ay);
                 v.DibujarPlanoYCuadrado(ax, ay, bx, by, cx, cy, dx, dy, p);
             } else {
                 JOptionPane.showMessageDialog(null, "Los numeros ingresados no cumplen con los requisitos");
@@ -837,9 +837,9 @@ public class Interfaz extends javax.swing.JFrame {
 
             if (ax >= -10 && ay >= -10 && bx >= -10 && by >= -10 && cx >= -10 && cy >= -10
                     && ax <= 10 && ay <= 10 && bx <= 10 && by <= 10 && cx <= 10 && cy <= 10) {
-                calculo.punto1Triangulo(ax, ay, bx, by);
-                calculo.punto2Triangulo(bx, by, cx, cy);
-                calculo.punto3Triangulo(cx, cy, ax, ay);
+                calculo.puntoABTriangulo(ax, ay, bx, by);
+                calculo.puntoBCTriangulo(bx, by, cx, cy);
+                calculo.puntoCATriangulo(cx, cy, ax, ay);
 
                 v.DibujarPlanoYTriangulo(ax, ay, bx, by, cx, cy, p);
 

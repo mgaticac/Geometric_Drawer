@@ -64,7 +64,7 @@ public class Calculo {
 
     }
 
-    public void puntoACCuadrado(double dx1, double dy1, double ax1, double ay1) {
+    public void puntoADCuadrado(double dx1, double dy1, double ax1, double ay1) {
         try {
             double resta1 = ((double) ax1 - (double) dx1);
             double resta2 = ((double) ay1 - (double) dy1);
@@ -118,7 +118,7 @@ public class Calculo {
         }
     }
 
-    public void puntoCDTriangulo(double cx1, double cy1, double ax1, double ay1) {
+    public void puntoCATriangulo(double cx1, double cy1, double ax1, double ay1) {
         try {
             double resta1 = ((double) ax1 - (double) cx1);
             double resta2 = ((double) ay1 - (double) cy1);
