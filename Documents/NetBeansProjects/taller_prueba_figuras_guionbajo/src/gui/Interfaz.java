@@ -12,12 +12,11 @@ public class Interfaz extends javax.swing.JFrame {
     int cantPuntos;
 
     public Interfaz() {
-        
+
         initComponents();
         Hilo h = new Hilo();
         h.start();
-        
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -968,7 +967,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void txtPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto1ActionPerformed
     }//GEN-LAST:event_txtPunto1ActionPerformed
     private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
-       
+
         if (cantPuntos == 3) {
             lblB4.setVisible(false);
             txtPunto4.setVisible(false);
@@ -1035,11 +1034,11 @@ public class Interfaz extends javax.swing.JFrame {
     private void contTrianguloisoceles1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloisoceles1ActionPerformed
     }//GEN-LAST:event_contTrianguloisoceles1ActionPerformed
     private void btnTraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraslacionActionPerformed
-        
+
         ventanaExtra.setBounds(0, 0, 620, 460);
         ventanaExtra.setFocusCycleRoot(true);
         ventanaExtra.setVisible(true);
-        
+
         p1.setText(txtPunto1.getText());
         p2.setText(txtPunto2.getText());
         p3.setText(txtPunto3.getText());
@@ -1137,19 +1136,19 @@ public class Interfaz extends javax.swing.JFrame {
                 c1 = p1.getText().split(",");
                 pa1 = Double.valueOf(c1[0]) + v1;
                 pa2 = Double.valueOf(c1[1]) + v2;
-                
+
                 c2 = p2.getText().split(",");
                 pb1 = Double.valueOf(c2[0]) + v1;
                 pb2 = Double.valueOf(c2[1]) + v2;
-                
+
                 c3 = p3.getText().split(",");
                 pc1 = Double.valueOf(c3[0]) + v1;
                 pc2 = Double.valueOf(c3[1]) + v2;
-                
+
                 txtPunto1.setText(pa1 + "," + pa2);
                 txtPunto2.setText(pb1 + "," + pb2);
                 txtPunto3.setText(pc1 + "," + pc2);
-                
+
             } else if (cantPuntos == 4) {
                 c0 = txtVtraslacion.getText().split(",");
                 v1 = Double.valueOf(c0[0]);
@@ -1157,19 +1156,19 @@ public class Interfaz extends javax.swing.JFrame {
                 c1 = p1.getText().split(",");
                 pa1 = Double.valueOf(c1[0]) + v1;
                 pa2 = Double.valueOf(c1[1]) + v2;
-                
+
                 c2 = p2.getText().split(",");
                 pb1 = Double.valueOf(c2[0]) + v1;
                 pb2 = Double.valueOf(c2[1]) + v2;
-                
+
                 c3 = p3.getText().split(",");
                 pc1 = Double.valueOf(c3[0]) + v1;
                 pc2 = Double.valueOf(c3[1]) + v2;
-                
+
                 c4 = p4.getText().split(",");
                 pd1 = Double.valueOf(c4[0]) + v1;
                 pd2 = Double.valueOf(c4[1]) + v2;
-                
+
                 txtPunto1.setText(pa1 + "," + pa2);
                 txtPunto2.setText(pb1 + "," + pb2);
                 txtPunto3.setText(pc1 + "," + pc2);
