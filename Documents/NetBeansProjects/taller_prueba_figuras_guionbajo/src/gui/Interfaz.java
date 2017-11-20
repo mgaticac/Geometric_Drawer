@@ -12,9 +12,12 @@ public class Interfaz extends javax.swing.JFrame {
     int cantPuntos;
 
     public Interfaz() {
+        
         initComponents();
         Hilo h = new Hilo();
         h.start();
+        
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -121,7 +124,7 @@ public class Interfaz extends javax.swing.JFrame {
         lblp1 = new javax.swing.JLabel();
         lblfnd = new javax.swing.JLabel();
         ventanaPrinc = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        vPrincipal = new javax.swing.JPanel();
         lblTiempo = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         btnProceder = new javax.swing.JButton();
@@ -348,21 +351,21 @@ public class Interfaz extends javax.swing.JFrame {
         lblperimetro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblperimetro.setText("Perimetro :");
         lblperimetro.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 0)));
-        jPanel2.add(lblperimetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 90, 30));
+        jPanel2.add(lblperimetro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 130, 30));
 
         lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado1.setText("--------------------------");
-        jPanel2.add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 150, 20));
+        jPanel2.add(lblResultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 140, 20));
 
         lblArea.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblArea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblArea.setText("Area :");
         lblArea.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 0, 0)));
-        jPanel2.add(lblArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 80, 30));
+        jPanel2.add(lblArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 110, 30));
 
         lblResultado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResultado2.setText("--------------------------");
-        jPanel2.add(lblResultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 150, 20));
+        jPanel2.add(lblResultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, 150, 20));
 
         btnRegresar.setBackground(new java.awt.Color(153, 255, 255));
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -657,15 +660,16 @@ public class Interfaz extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        vPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTiempo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanel1.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 20));
+        vPrincipal.add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 20));
 
         jLabel50.setText("Tiempo ejecucion:");
-        jPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, 20));
+        vPrincipal.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 120, 20));
 
         btnProceder.setBackground(new java.awt.Color(153, 255, 204));
         btnProceder.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -675,7 +679,7 @@ public class Interfaz extends javax.swing.JFrame {
                 btnProcederActionPerformed(evt);
             }
         });
-        jPanel1.add(btnProceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, -1));
+        vPrincipal.add(btnProceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, -1));
 
         cmbOpciones.setBackground(new java.awt.Color(153, 255, 204));
         cmbOpciones.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -685,7 +689,7 @@ public class Interfaz extends javax.swing.JFrame {
                 cmbOpcionesActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 240, -1));
+        vPrincipal.add(cmbOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 240, -1));
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSalir.setText("Salir");
@@ -694,25 +698,25 @@ public class Interfaz extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
+        vPrincipal.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 51));
         jLabel2.setText("                        Identificador de figuras geometricas");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 60, 470, 60));
+        vPrincipal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 60, 470, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/e0b133d203ae68dc61d0ac7436fc518e--drawing-letters-elements-of-art.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 450, 300));
+        vPrincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 450, 300));
 
         javax.swing.GroupLayout ventanaPrincLayout = new javax.swing.GroupLayout(ventanaPrinc);
         ventanaPrinc.setLayout(ventanaPrincLayout);
         ventanaPrincLayout.setHorizontalGroup(
             ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(vPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ventanaPrincLayout.setVerticalGroup(
             ventanaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(vPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         getContentPane().add(ventanaPrinc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 300));
@@ -862,7 +866,7 @@ public class Interfaz extends javax.swing.JFrame {
             if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     && calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     && calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
-                System.out.println("Triangulo Equilatero");
+                JOptionPane.showMessageDialog(null, "figura: Triangulo equilatero");
                 lblResultado2.setText(calculo.getAreaTrianguloEquilatero());
                 lblResultado1.setText(calculo.getPerimetroTrianguloEquilatero());
                 conttrianguloEq += 1;
@@ -870,14 +874,13 @@ public class Interfaz extends javax.swing.JFrame {
             } else if (calculo.getResultadoTAB() == calculo.getResultadoTBC()
                     || calculo.getResultadoTBC() == calculo.getResultadoTAC()
                     || calculo.getResultadoTAC() == calculo.getResultadoTAB()) {
-
-                System.out.println("Triangulo Isoceles");
+                JOptionPane.showMessageDialog(null, "figura: Triangulo Isoceles");
                 conttrianguloIs += 1;
                 lblResultado2.setText(calculo.getAreaTrianguloIsosceles());
                 lblResultado1.setText(calculo.getPerimetroTrianguloIsosceles());
                 contTrianguloisoceles1.setText(String.valueOf(conttrianguloIs));
             } else {
-                System.out.println("triangulo escaleno");
+                JOptionPane.showMessageDialog(null, "figura: Triangulo Escaleno");
                 lblResultado2.setText(calculo.getAreaTrianguloEscaleno());
                 conttrianguloEs += 1;
                 //El perimetro es la suma de todos los lados.°°°°
@@ -922,46 +925,42 @@ public class Interfaz extends javax.swing.JFrame {
             }
 
             if (trapecio == true) {
-                System.out.println("Trapecio");
+                JOptionPane.showMessageDialog(null, "figura: Trapecio");
                 conttrapecio += 1;
                 lblResultado2.setText(calculo.getAreaTrapecio());
                 //El perimetro es la suma de todos los lados.°°°°
                 contTrapecios.setText(String.valueOf(conttrapecio));
             } else if (cuadrado == true) {
-                System.out.println("cuadrado");
+                JOptionPane.showMessageDialog(null, "figura: Cuadrado");
                 contcua += 1;
                 lblResultado2.setText(calculo.getAreaCuadrado());
                 //El perimetro es la suma de todos los lados.°°°°
                 contCuadrados.setText(String.valueOf(contcua));
             } else if (rectangulo == true) {
-                System.out.println("rectangulo");
+                JOptionPane.showMessageDialog(null, "figura: Rectangulo");
                 contrect += 1;
                 contRectangulos.setText(String.valueOf(contrect));
                 lblResultado2.setText(calculo.getAreaRectangulo());
                 lblResultado1.setText(calculo.getPerimetroRectangulo());
             } else if (romboide == true) {
-                System.out.println("romboide");
+                JOptionPane.showMessageDialog(null, "figura: Romboide");
                 lblResultado2.setText(calculo.getAreaRomboide());
                 lblResultado1.setText(calculo.getPerimetroRomboide());
                 contromboide += 1;
 
                 contRoboides.setText(String.valueOf(contromboide));
             } else if (trapezoide == true) {
-                System.out.println("trapezoide");
-                //REEDUROOO
+                JOptionPane.showMessageDialog(null, "figura: Trapezoide");
                 conttrapezoide += 1;
 
                 contTrapezoides.setText(String.valueOf(conttrapezoide));
             } else if (rombo == true) {
-                System.out.println("Rombo");
+                JOptionPane.showMessageDialog(null, "figura: Rombo");
                 lblResultado2.setText(calculo.getAreaRombo());
                 lblResultado1.setText(calculo.getPerimetroRombo());
                 contrombo += 1;
                 contRombos.setText(String.valueOf(contrombo));
-            } else {
-                System.err.println("[Error]NO SE DETECTO NINGUNA FIGURA, LO SENTIMOS");
             }
-
         }
     }//GEN-LAST:event_btnIdentificarActionPerformed
     private void txtPunto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto4ActionPerformed
@@ -969,6 +968,7 @@ public class Interfaz extends javax.swing.JFrame {
     private void txtPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto1ActionPerformed
     }//GEN-LAST:event_txtPunto1ActionPerformed
     private void btnProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcederActionPerformed
+       
         if (cantPuntos == 3) {
             lblB4.setVisible(false);
             txtPunto4.setVisible(false);
@@ -976,14 +976,14 @@ public class Interfaz extends javax.swing.JFrame {
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
-            lblperimetro.setText("Perimetro Triangulo: ");
+            ventanaCalc.setLocationRelativeTo(null);
 
         } else if (cantPuntos == 4) {
             cb4.setVisible(true);
             ventanaCalc.setBounds(ventanaPrinc.getX(), ventanaPrinc.getY(), 950, 700);
             ventanaCalc.setVisible(true);
             ventanaCalc.setFocusable(true);
-            lblperimetro.setText("Perimetro Cuadrado: ");
+            ventanaCalc.setLocationRelativeTo(null);
 
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese una opcion porfavor.");
@@ -1035,9 +1035,11 @@ public class Interfaz extends javax.swing.JFrame {
     private void contTrianguloisoceles1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contTrianguloisoceles1ActionPerformed
     }//GEN-LAST:event_contTrianguloisoceles1ActionPerformed
     private void btnTraslacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraslacionActionPerformed
+        
         ventanaExtra.setBounds(0, 0, 620, 460);
         ventanaExtra.setFocusCycleRoot(true);
         ventanaExtra.setVisible(true);
+        
         p1.setText(txtPunto1.getText());
         p2.setText(txtPunto2.getText());
         p3.setText(txtPunto3.getText());
@@ -1127,57 +1129,66 @@ public class Interfaz extends javax.swing.JFrame {
         String[] c0;
         double pa1, pa2, pb1, pb2, pc1, pc2, pd1, pd2, v1, v2;
 
-        if (cantPuntos == 3) {
-            c0 = txtVtraslacion.getText().split(",");
-            v1 = Double.valueOf(c0[0]);
-            v2 = Double.valueOf(c0[1]);
-            c1 = p1.getText().split(",");
-            pa1 = Double.valueOf(c1[0]) + v1;
-            pa2 = Double.valueOf(c1[1]) + v2;
-
-            c2 = p2.getText().split(",");
-            pb1 = Double.valueOf(c2[0]) + v1;
-            pb2 = Double.valueOf(c2[1]) + v2;
-
-            c3 = p3.getText().split(",");
-            pc1 = Double.valueOf(c3[0]) + v1;
-            pc2 = Double.valueOf(c3[1]) + v2;
-
-            txtPunto1.setText(pa1 + "," + pa2);
-            txtPunto2.setText(pb1 + "," + pb2);
-            txtPunto3.setText(pc1 + "," + pc2);
-
-        } else if (cantPuntos == 4) {
-            c0 = txtVtraslacion.getText().split(",");
-            v1 = Double.valueOf(c0[0]);
-            v2 = Double.valueOf(c0[1]);
-            c1 = p1.getText().split(",");
-            pa1 = Double.valueOf(c1[0]) + v1;
-            pa2 = Double.valueOf(c1[1]) + v2;
-
-            c2 = p2.getText().split(",");
-            pb1 = Double.valueOf(c2[0]) + v1;
-            pb2 = Double.valueOf(c2[1]) + v2;
-
-            c3 = p3.getText().split(",");
-            pc1 = Double.valueOf(c3[0]) + v1;
-            pc2 = Double.valueOf(c3[1]) + v2;
-
-            c4 = p4.getText().split(",");
-            pd1 = Double.valueOf(c4[0]) + v1;
-            pd2 = Double.valueOf(c4[1]) + v2;
-
-            txtPunto1.setText(pa1 + "," + pa2);
-            txtPunto2.setText(pb1 + "," + pb2);
-            txtPunto3.setText(pc1 + "," + pc2);
-            txtPunto4.setText(pd1 + "," + pd2);
+        try {
+            if (cantPuntos == 3) {
+                c0 = txtVtraslacion.getText().split(",");
+                v1 = Double.valueOf(c0[0]);
+                v2 = Double.valueOf(c0[1]);
+                c1 = p1.getText().split(",");
+                pa1 = Double.valueOf(c1[0]) + v1;
+                pa2 = Double.valueOf(c1[1]) + v2;
+                
+                c2 = p2.getText().split(",");
+                pb1 = Double.valueOf(c2[0]) + v1;
+                pb2 = Double.valueOf(c2[1]) + v2;
+                
+                c3 = p3.getText().split(",");
+                pc1 = Double.valueOf(c3[0]) + v1;
+                pc2 = Double.valueOf(c3[1]) + v2;
+                
+                txtPunto1.setText(pa1 + "," + pa2);
+                txtPunto2.setText(pb1 + "," + pb2);
+                txtPunto3.setText(pc1 + "," + pc2);
+                
+            } else if (cantPuntos == 4) {
+                c0 = txtVtraslacion.getText().split(",");
+                v1 = Double.valueOf(c0[0]);
+                v2 = Double.valueOf(c0[1]);
+                c1 = p1.getText().split(",");
+                pa1 = Double.valueOf(c1[0]) + v1;
+                pa2 = Double.valueOf(c1[1]) + v2;
+                
+                c2 = p2.getText().split(",");
+                pb1 = Double.valueOf(c2[0]) + v1;
+                pb2 = Double.valueOf(c2[1]) + v2;
+                
+                c3 = p3.getText().split(",");
+                pc1 = Double.valueOf(c3[0]) + v1;
+                pc2 = Double.valueOf(c3[1]) + v2;
+                
+                c4 = p4.getText().split(",");
+                pd1 = Double.valueOf(c4[0]) + v1;
+                pd2 = Double.valueOf(c4[1]) + v2;
+                
+                txtPunto1.setText(pa1 + "," + pa2);
+                txtPunto2.setText(pb1 + "," + pb2);
+                txtPunto3.setText(pc1 + "," + pc2);
+                txtPunto4.setText(pd1 + "," + pd2);
+            }
+            ventanaExtra.setVisible(false);
+            p1.setText("");
+            p2.setText("");
+            p3.setText("");
+            p4.setText("");
+            txtVtraslacion.setText("");
+        } catch (Exception exception) {
+            ventanaExtra.setVisible(false);
+            p1.setText("");
+            p2.setText("");
+            p3.setText("");
+            p4.setText("");
+            txtVtraslacion.setText("");
         }
-        ventanaExtra.setVisible(false);
-        p1.setText("");
-        p2.setText("");
-        p3.setText("");
-        p4.setText("");
-        txtVtraslacion.setText("");
     }//GEN-LAST:event_btnRegrActionPerformed
 
     public static void main(String args[]) {
@@ -1263,7 +1274,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblArea;
@@ -1291,6 +1301,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField txtPunto3;
     private javax.swing.JTextField txtPunto4;
     private javax.swing.JTextField txtVtraslacion;
+    private javax.swing.JPanel vPrincipal;
     private javax.swing.JFrame ventanaCalc;
     private javax.swing.JFrame ventanaEstadisticas;
     private javax.swing.JFrame ventanaExtra;
